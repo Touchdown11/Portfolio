@@ -1,0 +1,1804 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio Management | Lakshan's Professional Skills Portfolio</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        :root {
+            --primary: #1a1a2e;
+            --secondary: #16213e;
+            --accent: #e94560;
+            --gold: #d4af37;
+            --light: #f0f0f0;
+            --text: #333333;
+            --success: #2ecc71;
+            --portfolio-purple: #9b59b6;
+        }
+
+        body {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            color: var(--light);
+            line-height: 1.6;
+            scroll-behavior: smooth;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header Styles */
+        header {
+            padding: 20px 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background: rgba(22, 33, 62, 0.95);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 28px;
+            font-weight: 700;
+            color: var(--gold);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+        }
+
+        .logo i {
+            margin-right: 10px;
+            font-size: 32px;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+
+        nav ul li {
+            margin-left: 30px;
+        }
+
+        nav ul li a {
+            color: var(--light);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+            position: relative;
+        }
+
+        nav ul li a.active {
+            color: var(--gold);
+        }
+
+        nav ul li a.active::after {
+            width: 100%;
+        }
+
+        nav ul li a:hover {
+            color: var(--gold);
+        }
+
+        nav ul li a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -5px;
+            left: 0;
+            background-color: var(--gold);
+            transition: width 0.3s;
+        }
+
+        nav ul li a:hover::after {
+            width: 100%;
+        }
+
+        .menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            color: var(--light);
+            font-size: 24px;
+            cursor: pointer;
+        }
+
+        /* Back to Top Button */
+        .back-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 50px;
+            height: 50px;
+            background: var(--accent);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            font-size: 20px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+            transition: all 0.3s;
+            z-index: 999;
+            opacity: 0;
+            visibility: hidden;
+        }
+
+        .back-to-top.visible {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .back-to-top:hover {
+            background: var(--portfolio-purple);
+            transform: translateY(-5px);
+        }
+
+        /* Portfolio Hero Section */
+        .portfolio-hero {
+            padding: 150px 0 80px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            background: linear-gradient(rgba(26, 26, 46, 0.85), rgba(22, 33, 62, 0.85)), url('https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=1500&q=80');
+            background-size: cover;
+            background-position: center;
+        }
+
+        .portfolio-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at center, rgba(155, 89, 182, 0.1) 0%, transparent 70%);
+            z-index: -1;
+        }
+
+        .portfolio-hero h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
+            font-weight: 700;
+            background: linear-gradient(45deg, var(--portfolio-purple), #d8b4e2);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: fadeInUp 1s ease-out;
+        }
+
+        .portfolio-hero p {
+            font-size: 20px;
+            max-width: 800px;
+            margin: 0 auto 30px;
+            color: #cccccc;
+            animation: fadeInUp 1s ease-out 0.2s both;
+        }
+
+        .btn {
+            display: inline-block;
+            background: var(--accent);
+            color: white;
+            padding: 12px 30px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+            border: 2px solid var(--accent);
+            margin-top: 20px;
+            animation: fadeInUp 1s ease-out 0.4s both;
+        }
+
+        .btn:hover {
+            background: transparent;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .btn-outline {
+            background: transparent;
+            border: 2px solid var(--portfolio-purple);
+            color: var(--portfolio-purple);
+        }
+
+        .btn-outline:hover {
+            background: var(--portfolio-purple);
+            color: var(--light);
+        }
+
+        /* Content Sections */
+        .content-section {
+            padding: 80px 0;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 60px;
+            position: relative;
+        }
+
+        .section-title h2 {
+            font-size: 36px;
+            color: var(--portfolio-purple);
+            margin-bottom: 15px;
+        }
+
+        .section-title p {
+            color: #cccccc;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            width: 80px;
+            height: 3px;
+            background: var(--accent);
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        /* Notes & Summary Section - Enhanced with icons */
+        .notes-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-bottom: 50px;
+        }
+
+        .note-card {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 15px;
+            padding: 30px;
+            transition: transform 0.3s;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            position: relative;
+            overflow: hidden;
+            text-align: center;
+        }
+
+        .note-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: linear-gradient(90deg, var(--portfolio-purple), var(--accent));
+        }
+
+        .note-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .note-icon {
+            font-size: 40px;
+            color: var(--portfolio-purple);
+            margin-bottom: 20px;
+        }
+
+        .note-card h3 {
+            font-size: 22px;
+            margin-bottom: 15px;
+            color: var(--light);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .note-card h3 i {
+            margin-right: 10px;
+            color: var(--portfolio-purple);
+        }
+
+        .note-card ul {
+            padding-left: 20px;
+            margin-top: 15px;
+            text-align: left;
+        }
+
+        .note-card li {
+            margin-bottom: 8px;
+            color: #cccccc;
+        }
+
+        /* Portfolio Components Section - New section */
+        .components-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-bottom: 50px;
+        }
+
+        .component-card {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 15px;
+            padding: 30px;
+            transition: transform 0.3s;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            position: relative;
+            overflow: hidden;
+            text-align: center;
+        }
+
+        .component-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .component-number {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background: var(--portfolio-purple);
+            color: var(--light);
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 16px;
+        }
+
+        .component-icon {
+            font-size: 40px;
+            color: var(--portfolio-purple);
+            margin-bottom: 20px;
+        }
+
+        .component-card h3 {
+            font-size: 22px;
+            margin-bottom: 15px;
+            color: var(--light);
+        }
+
+        .component-card ul {
+            list-style-type: none;
+            padding-left: 0;
+            text-align: left;
+        }
+
+        .component-card ul li {
+            margin-bottom: 10px;
+            color: #cccccc;
+            position: relative;
+            padding-left: 20px;
+        }
+
+        .component-card ul li:before {
+            content: "•";
+            color: var(--accent);
+            font-weight: bold;
+            position: absolute;
+            left: 0;
+        }
+
+        /* Reflection Section */
+        .reflection-content {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 15px;
+            padding: 40px;
+            margin-bottom: 50px;
+            backdrop-filter: blur(10px);
+            border-left: 5px solid var(--portfolio-purple);
+        }
+
+        .reflection-content p {
+            margin-bottom: 20px;
+            color: #cccccc;
+            line-height: 1.8;
+        }
+
+        /* Assignments Section */
+        .assignment {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 15px;
+            padding: 30px;
+            margin-bottom: 30px;
+            backdrop-filter: blur(10px);
+        }
+
+        .assignment h3 {
+            color: var(--portfolio-purple);
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+        }
+
+        .assignment h3 i {
+            margin-right: 10px;
+        }
+
+        .keyword-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin: 15px 0;
+        }
+
+        .keyword {
+            background: rgba(155, 89, 182, 0.2);
+            color: var(--portfolio-purple);
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 14px;
+        }
+
+        .comparison {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .before, .after {
+            padding: 20px;
+            border-radius: 10px;
+        }
+
+        .before {
+            background: rgba(233, 69, 96, 0.1);
+            border-left: 3px solid var(--accent);
+        }
+
+        .after {
+            background: rgba(46, 204, 113, 0.1);
+            border-left: 3px solid var(--success);
+        }
+
+        .before h4, .after h4 {
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+        }
+
+        .before h4 {
+            color: var(--accent);
+        }
+
+        .after h4 {
+            color: var(--success);
+        }
+
+        .before h4 i, .after h4 i {
+            margin-right: 8px;
+        }
+
+        /* Skills Gained Section */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 25px;
+        }
+
+        .skill-item {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 10px;
+            padding: 20px;
+            text-align: center;
+            transition: transform 0.3s;
+        }
+
+        .skill-item:hover {
+            transform: translateY(-5px);
+            background: rgba(255, 255, 255, 0.08);
+        }
+
+        .skill-item i {
+            font-size: 30px;
+            color: var(--portfolio-purple);
+            margin-bottom: 15px;
+        }
+
+        .skill-item h4 {
+            margin-bottom: 10px;
+            color: var(--light);
+        }
+
+        .skill-item p {
+            color: #cccccc;
+            font-size: 14px;
+        }
+
+        /* Portfolio Tips Section - New section */
+        .tips-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .tip-item {
+            margin-bottom: 30px;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 10px;
+            display: flex;
+            align-items: flex-start;
+            gap: 20px;
+            backdrop-filter: blur(10px);
+        }
+
+        .tip-icon {
+            background: var(--accent);
+            color: white;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            font-size: 20px;
+        }
+
+        .tip-text h4 {
+            font-size: 20px;
+            margin-bottom: 10px;
+            color: var(--light);
+        }
+
+        .tip-text p {
+            color: #cccccc;
+        }
+
+        /* Portfolio Checklist Section */
+        .checklist-container {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 15px;
+            padding: 30px;
+            margin-bottom: 50px;
+            backdrop-filter: blur(10px);
+        }
+
+        .checklist-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+
+        .checklist-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 15px;
+        }
+
+        .checklist-item i {
+            color: var(--success);
+            margin-right: 10px;
+            margin-top: 3px;
+            flex-shrink: 0;
+        }
+
+        /* Expandable Sections */
+        .expandable-section {
+            margin-bottom: 20px;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        .expandable-header {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 15px 20px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: background 0.3s;
+        }
+
+        .expandable-header:hover {
+            background: rgba(255, 255, 255, 0.15);
+        }
+
+        .expandable-header h3 {
+            margin: 0;
+            color: var(--portfolio-purple);
+        }
+
+        .expandable-content {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 0;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s, padding 0.3s;
+        }
+
+        .expandable-content.active {
+            padding: 20px;
+            max-height: 500px;
+        }
+
+        .expandable-content p {
+            margin-bottom: 15px;
+        }
+
+        .expandable-content ul {
+            padding-left: 20px;
+            margin-bottom: 15px;
+        }
+
+        .expandable-content li {
+            margin-bottom: 8px;
+        }
+
+        /* Portfolio Types Section */
+        .portfolio-types {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 25px;
+            margin: 40px 0;
+        }
+
+        .type-card {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 10px;
+            padding: 25px;
+            text-align: center;
+            transition: transform 0.3s;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .type-card:hover {
+            transform: translateY(-5px);
+            background: rgba(255, 255, 255, 0.08);
+        }
+
+        .type-card i {
+            font-size: 40px;
+            color: var(--portfolio-purple);
+            margin-bottom: 15px;
+        }
+
+        .type-card h4 {
+            margin-bottom: 10px;
+            color: var(--light);
+        }
+
+        .type-card p {
+            color: #cccccc;
+            font-size: 14px;
+        }
+
+        /* Platform Grid */
+        .platform-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 20px;
+            margin: 40px 0;
+        }
+
+        .platform-card {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 10px;
+            padding: 20px;
+            text-align: center;
+            transition: transform 0.3s;
+        }
+
+        .platform-card:hover {
+            transform: translateY(-5px);
+            background: rgba(255, 255, 255, 0.08);
+        }
+
+        .platform-card i {
+            font-size: 30px;
+            color: var(--portfolio-purple);
+            margin-bottom: 10px;
+        }
+
+        .platform-card h4 {
+            margin-bottom: 10px;
+            color: var(--light);
+        }
+
+        .platform-card p {
+            color: #cccccc;
+            font-size: 14px;
+        }
+
+        /* Steps Section */
+        .steps-container {
+            counter-reset: step-counter;
+        }
+
+        .step-item {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 10px;
+            padding: 25px;
+            margin-bottom: 20px;
+            position: relative;
+            padding-left: 80px;
+            border-left: 4px solid var(--portfolio-purple);
+        }
+
+        .step-item::before {
+            counter-increment: step-counter;
+            content: counter(step-counter);
+            position: absolute;
+            left: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 40px;
+            height: 40px;
+            background: var(--portfolio-purple);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 18px;
+        }
+
+        .step-item h4 {
+            color: var(--light);
+            margin-bottom: 10px;
+        }
+
+        .step-item p {
+            color: #cccccc;
+        }
+
+        /* My Portfolio Section */
+        .my-portfolio {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 15px;
+            padding: 40px;
+            margin: 50px 0;
+            border-left: 5px solid var(--portfolio-purple);
+        }
+
+        .my-portfolio h3 {
+            color: var(--portfolio-purple);
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .portfolio-stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 20px;
+            margin: 30px 0;
+        }
+
+        .stat-item {
+            text-align: center;
+            padding: 20px;
+            background: rgba(155, 89, 182, 0.1);
+            border-radius: 10px;
+        }
+
+        .stat-item .number {
+            font-size: 36px;
+            font-weight: bold;
+            color: var(--portfolio-purple);
+            display: block;
+        }
+
+        .stat-item .label {
+            color: #cccccc;
+            font-size: 14px;
+        }
+
+        .cta {
+            padding: 100px 0;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            text-align: center;
+        }
+
+        .cta h2 {
+            font-size: 36px;
+            margin-bottom: 20px;
+        }
+
+        .cta p {
+            font-size: 18px;
+            max-width: 700px;
+            margin: 0 auto 30px;
+        }
+
+        .btn-light {
+            background: transparent;
+            color: white;
+            border: 2px solid white;
+        }
+
+        .btn-light:hover {
+            background: white;
+            color: var(--primary);
+        }
+
+        /* Footer */
+        footer {
+            padding: 50px 0 30px;
+            text-align: center;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            margin-top: 50px;
+        }
+
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 30px;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 20px;
+        }
+
+        .social-links a {
+            color: var(--light);
+            font-size: 20px;
+            transition: color 0.3s;
+        }
+
+        .social-links a:hover {
+            color: var(--gold);
+        }
+
+        .copyright {
+            color: #999;
+            font-size: 14px;
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .header-content {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            nav ul {
+                display: none;
+                flex-direction: column;
+                width: 100%;
+                margin-top: 20px;
+            }
+
+            nav ul.show {
+                display: flex;
+            }
+
+            nav ul li {
+                margin: 10px 0;
+            }
+
+            .menu-toggle {
+                display: block;
+                position: absolute;
+                top: 20px;
+                right: 20px;
+            }
+
+            .portfolio-hero h1 {
+                font-size: 36px;
+            }
+
+            .comparison {
+                grid-template-columns: 1fr;
+            }
+
+            .skills-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-content {
+                flex-direction: column;
+                gap: 20px;
+            }
+
+            .tip-item {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .expandable-header {
+                padding: 12px 15px;
+            }
+
+            .expandable-header h3 {
+                font-size: 18px;
+            }
+
+            .step-item {
+                padding-left: 70px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <a href="Portfolio.html" class="logo">
+                    <i class="fas fa-graduation-cap"></i> Lakshan K.P.B
+                </a>
+                <button class="menu-toggle" id="menuToggle">
+                    <i class="fas fa-bars"></i>
+                </button>
+                <nav>
+                    <ul id="navMenu">
+                        <li><a href="Portfolio.html">Home</a></li>
+                        <li><a href="Portfolio.html#skills">Skills</a></li>
+                        <li><a href="Portfolio.html#projects">Projects</a></li>
+                        <li><a href="Portfolio.html#contact">Contact</a></li>
+                        <li><a href="PortfolioManegment.html" class="active">Portfolio Management</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Back to Top Button -->
+    <a href="#" class="back-to-top" id="backToTop">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+
+    <!-- Portfolio Hero Section -->
+    <section class="portfolio-hero">
+        <div class="container">
+            <h1>Portfolio Management</h1>
+            <p>Mastering the art of creating, organizing, and presenting professional portfolios for career advancement and skill demonstration</p>
+            <a href="#components" class="btn">Explore Portfolio Components</a>
+        </div>
+    </section>
+
+    <!-- Notes & Summary Section -->
+    <section class="content-section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Lecture Notes & Summary</h2>
+                <p>Key principles and concepts from Portfolio Management Lecture</p>
+            </div>
+            
+            <div class="notes-container">
+                <div class="note-card">
+                    <div class="note-icon">
+                        <i class="fas fa-bullseye"></i>
+                    </div>
+                    <h3>Purpose of a Portfolio</h3>
+                    <p>A portfolio is a curated collection of work samples, achievements, and reflections that showcases skills, growth, and accomplishments to specific audiences.</p>
+                </div>
+                
+                <div class="note-card">
+                    <div class="note-icon">
+                        <i class="fas fa-key"></i>
+                    </div>
+                    <h3>Key Principles</h3>
+                    <ul>
+                        <li><strong>Strategic Curation:</strong> Selectively presenting work that aligns with your goals</li>
+                        <li><strong>Audience Awareness:</strong> Tailoring content for specific viewers</li>
+                        <li><strong>Reflective Practice:</strong> Including insights about learning and growth</li>
+                    </ul>
+                </div>
+                
+                <div class="note-card">
+                    <div class="note-icon">
+                        <i class="fas fa-file-alt"></i>
+                    </div>
+                    <h3>Portfolio Structure & Formatting</h3>
+                    <p>Organized presentation with clear sections, professional appearance, and consistent formatting that enhances readability and impact.</p>
+                </div>
+                
+                <div class="note-card">
+                    <div class="note-icon">
+                        <i class="fas fa-list-ol"></i>
+                    </div>
+                    <h3>Essential Components</h3>
+                    <ul>
+                        <li>Introduction/About Me</li>
+                        <li>Work Samples/Projects</li>
+                        <li>Skills & Competencies</li>
+                        <li>Achievements & Certifications</li>
+                        <li>Reflections & Learning Journey</li>
+                        <li>Contact Information</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Portfolio Checklist Section -->
+            <div class="checklist-container">
+                <h3 style="text-align: center; margin-bottom: 20px; color: var(--portfolio-purple);">Portfolio Checklist</h3>
+                <div class="checklist-grid">
+                    <div>
+                        <div class="checklist-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Clear purpose and target audience defined</span>
+                        </div>
+                        <div class="checklist-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Professional introduction/about me section</span>
+                        </div>
+                        <div class="checklist-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>High-quality work samples with context</span>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="checklist-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Skills section with evidence of proficiency</span>
+                        </div>
+                        <div class="checklist-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Achievements and certifications documented</span>
+                        </div>
+                        <div class="checklist-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Reflective statements on learning journey</span>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="checklist-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Clear contact information</span>
+                        </div>
+                        <div class="checklist-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Consistent and professional formatting</span>
+                        </div>
+                        <div class="checklist-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Regularly updated with new content</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio Components Section - New Section -->
+    <section class="content-section" style="background: rgba(0,0,0,0.2);" id="components">
+        <div class="container">
+            <div class="section-title">
+                <h2>Essential Portfolio Components</h2>
+                <p>Key elements that make up an effective portfolio</p>
+            </div>
+            
+            <div class="components-grid">
+                <div class="component-card">
+                    <div class="component-number">01</div>
+                    <div class="component-icon">
+                        <i class="fas fa-user"></i>
+                    </div>
+                    <h3>Introduction/About Me</h3>
+                    <ul>
+                        <li>Professional biography</li>
+                        <li>Career objectives</li>
+                        <li>Personal brand statement</li>
+                        <li>Professional photo (optional)</li>
+                    </ul>
+                </div>
+                
+                <div class="component-card">
+                    <div class="component-number">02</div>
+                    <div class="component-icon">
+                        <i class="fas fa-briefcase"></i>
+                    </div>
+                    <h3>Work Samples/Projects</h3>
+                    <ul>
+                        <li>Relevant project examples</li>
+                        <li>Before/after comparisons</li>
+                        <li>Process documentation</li>
+                        <li>Results and impact</li>
+                    </ul>
+                </div>
+                
+                <div class="component-card">
+                    <div class="component-number">03</div>
+                    <div class="component-icon">
+                        <i class="fas fa-graduation-cap"></i>
+                    </div>
+                    <h3>Education & Certifications</h3>
+                    <ul>
+                        <li>Academic qualifications</li>
+                        <li>Professional certifications</li>
+                        <li>Workshops and training</li>
+                        <li>Relevant coursework</li>
+                    </ul>
+                </div>
+                
+                <div class="component-card">
+                    <div class="component-number">04</div>
+                    <div class="component-icon">
+                        <i class="fas fa-tools"></i>
+                    </div>
+                    <h3>Skills & Competencies</h3>
+                    <ul>
+                        <li>Technical skills</li>
+                        <li>Soft skills</li>
+                        <li>Tools and technologies</li>
+                        <li>Skill proficiency levels</li>
+                    </ul>
+                </div>
+                
+                <div class="component-card">
+                    <div class="component-number">05</div>
+                    <div class="component-icon">
+                        <i class="fas fa-trophy"></i>
+                    </div>
+                    <h3>Achievements & Awards</h3>
+                    <ul>
+                        <li>Professional recognitions</li>
+                        <li>Awards and honors</li>
+                        <li>Publications or presentations</li>
+                        <li>Quantifiable successes</li>
+                    </ul>
+                </div>
+                
+                <div class="component-card">
+                    <div class="component-number">06</div>
+                    <div class="component-icon">
+                        <i class="fas fa-lightbulb"></i>
+                    </div>
+                    <h3>Reflections & Insights</h3>
+                    <ul>
+                        <li>Learning journey documentation</li>
+                        <li>Challenges and solutions</li>
+                        <li>Future goals</li>
+                        <li>Personal growth insights</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio Types Section -->
+    <section class="content-section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Types of Portfolios</h2>
+                <p>Different portfolio formats tailored for specific purposes and audiences</p>
+            </div>
+            
+            <div class="portfolio-types">
+                <div class="type-card">
+                    <i class="fas fa-user"></i>
+                    <h4>Personal Portfolio</h4>
+                    <p>Collection of creative work, achievements, and projects showcasing skills, talents, and interests. Ideal for creative fields.</p>
+                </div>
+                
+                <div class="type-card">
+                    <i class="fas fa-briefcase"></i>
+                    <h4>Career/Dossier Portfolio</h4>
+                    <p>Presents professional achievements and credentials including resume, cover letter, and reference letters for job applications.</p>
+                </div>
+                
+                <div class="type-card">
+                    <i class="fas fa-building"></i>
+                    <h4>Employment Portfolio</h4>
+                    <p>Comprehensive collection of work-related documents, accomplishments, and evidence of skills for career development.</p>
+                </div>
+                
+                <div class="type-card">
+                    <i class="fas fa-clipboard-check"></i>
+                    <h4>Assessment Portfolio</h4>
+                    <p>Showcases learning progress and achievements over time, commonly used in educational settings for evaluation.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Reflection Section -->
+    <section class="content-section" style="background: rgba(0,0,0,0.2);">
+        <div class="container">
+            <div class="section-title">
+                <h2>Personal Reflection</h2>
+                <p>How this lecture transformed my approach to portfolio management</p>
+            </div>
+            
+            <div class="reflection-content">
+                <p>This lecture fundamentally changed my perception of portfolios from simple collections of work to strategic tools for professional storytelling. I learned that a portfolio isn't just about showcasing what I've done, but about crafting a narrative that demonstrates growth, skills, and potential to specific audiences.</p>
+                
+                <p>The concept of strategic curation was particularly enlightening. I now understand that including everything isn't effective - I need to carefully select work that aligns with my goals and speaks to my target audience. This requires thoughtful consideration of what each piece communicates about my abilities and development.</p>
+                
+                <p>The emphasis on reflective practice resonated with me. Documenting not just the final products but also the process, challenges, and learning outcomes adds depth to a portfolio. This reflective component transforms a portfolio from a static collection into a dynamic representation of professional growth.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio Creation Steps -->
+    <section class="content-section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Creating an Effective Portfolio</h2>
+                <p>17-step guide to developing a comprehensive and professional portfolio</p>
+            </div>
+            
+            <div class="steps-container">
+                <div class="step-item">
+                    <h4>Define Your Purpose</h4>
+                    <p>Determine the primary purpose - academic, job applications, personal development, or combination.</p>
+                </div>
+                
+                <div class="step-item">
+                    <h4>Identify Your Audience</h4>
+                    <p>Consider who will review your portfolio and tailor content to meet their expectations.</p>
+                </div>
+                
+                <div class="step-item">
+                    <h4>Choose Your Format</h4>
+                    <p>Decide between physical (printed binder) or digital (website, PDF, online platform) format.</p>
+                </div>
+                
+                <div class="step-item">
+                    <h4>Collect Your Materials</h4>
+                    <p>Gather relevant documents, artifacts, and evidence of skills and accomplishments.</p>
+                </div>
+                
+                <div class="step-item">
+                    <h4>Organize Your Portfolio</h4>
+                    <p>Structure logically with clear sections: introduction, resume, education, experience, projects, etc.</p>
+                </div>
+                
+                <div class="step-item">
+                    <h4>Provide Context</h4>
+                    <p>Explain the significance of each item and what you learned or achieved from it.</p>
+                </div>
+                
+                <div class="step-item">
+                    <h4>Showcase Your Achievements</h4>
+                    <p>Highlight relevant accomplishments with quantifiable results and specific examples.</p>
+                </div>
+                
+                <div class="step-item">
+                    <h4>Maintain Professional Appearance</h4>
+                    <p>Ensure well-organized, error-free, and visually appealing with consistent formatting.</p>
+                </div>
+                
+                <div class="step-item">
+                    <h4>Include Self-Assessment</h4>
+                    <p>Reflect on strengths, weaknesses, and areas for improvement with personal growth insights.</p>
+                </div>
+                
+                <div class="step-item">
+                    <h4>Regularly Update</h4>
+                    <p>Keep your portfolio current with new achievements and experiences.</p>
+                </div>
+                
+                <div class="step-item">
+                    <h4>Seek Feedback</h4>
+                    <p>Ask peers, mentors, or advisors for feedback on content and presentation.</p>
+                </div>
+                
+                <div class="step-item">
+                    <h4>Tailor Your Portfolio</h4>
+                    <p>Customize for different purposes, highlighting skills relevant to specific opportunities.</p>
+                </div>
+                
+                <div class="step-item">
+                    <h4>Practice Presentation</h4>
+                    <p>Prepare to discuss portfolio content and answer questions in interviews or meetings.</p>
+                </div>
+                
+                <div class="step-item">
+                    <h4>Keep Copies and Backups</h4>
+                    <p>Maintain both digital and physical copies with regular backups to prevent loss.</p>
+                </div>
+                
+                <div class="step-item">
+                    <h4>Protect Your Privacy</h4>
+                    <p>Be mindful of sensitive personal information and share only what's necessary.</p>
+                </div>
+                
+                <div class="step-item">
+                    <h4>Use Technology Wisely</h4>
+                    <p>Explore digital tools to make your portfolio interactive and engaging.</p>
+                </div>
+                
+                <div class="step-item">
+                    <h4>Continuously Learn and Improve</h4>
+                    <p>Regularly update and refine your portfolio as a tool for self-assessment and development.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Online Portfolio Platforms -->
+    <section class="content-section" style="background: rgba(0,0,0,0.2);">
+        <div class="container">
+            <div class="section-title">
+                <h2>Online Portfolio Platforms</h2>
+                <p>Digital tools and platforms for creating professional online portfolios</p>
+            </div>
+            
+            <div class="platform-grid">
+                <div class="platform-card">
+                    <i class="fab fa-linkedin"></i>
+                    <h4>LinkedIn</h4>
+                    <p>Professional networking with profile showcasing work experience, education, and multimedia content.</p>
+                </div>
+                
+                <div class="platform-card">
+                    <i class="fab fa-behance"></i>
+                    <h4>Behance</h4>
+                    <p>Platform for creative professionals to showcase graphic design, photography, and illustration work.</p>
+                </div>
+                
+                <div class="platform-card">
+                    <i class="fab fa-google"></i>
+                    <h4>Google Sites</h4>
+                    <p>Free, user-friendly website builder that integrates seamlessly with Google Drive.</p>
+                </div>
+                
+                <div class="platform-card">
+                    <i class="fab fa-wordpress"></i>
+                    <h4>WordPress</h4>
+                    <p>Versatile CMS with themes and plugins for customized portfolio websites or blogs.</p>
+                </div>
+                
+                <div class="platform-card">
+                    <i class="fas fa-w"></i>
+                    <h4>Wix</h4>
+                    <p>User-friendly drag-and-drop website builder with professional portfolio templates.</p>
+                </div>
+                
+                <div class="platform-card">
+                    <i class="fas fa-cloud"></i>
+                    <h4>Weebly</h4>
+                    <p>Easy-to-use website builder with various templates for minimal technical knowledge requirements.</p>
+                </div>
+                
+                <div class="platform-card">
+                    <i class="fas fa-square"></i>
+                    <h4>Squarespace</h4>
+                    <p>Elegant templates for stylish portfolio sites with minimal design effort.</p>
+                </div>
+                
+                <div class="platform-card">
+                    <i class="fab fa-adobe"></i>
+                    <h4>Adobe Portfolio</h4>
+                    <p>Integrates with Adobe Creative Cloud, ideal for creative professionals.</p>
+                </div>
+                
+                <div class="platform-card">
+                    <i class="fab fa-github"></i>
+                    <h4>GitHub Pages</h4>
+                    <p>Free static website hosting for programmers to display coding projects.</p>
+                </div>
+                
+                <div class="platform-card">
+                    <i class="fas fa-paint-brush"></i>
+                    <h4>Cargo</h4>
+                    <p>Platform for artists and creatives with customizable templates.</p>
+                </div>
+                
+                <div class="platform-card">
+                    <i class="fas fa-camera"></i>
+                    <h4>Portfoliobox</h4>
+                    <p>Caters to artists, designers, and photographers with customization tools.</p>
+                </div>
+                
+                <div class="platform-card">
+                    <i class="fas fa-pen-fancy"></i>
+                    <h4>Journo Portfolio</h4>
+                    <p>Designed for writers and journalists to build writing portfolios easily.</p>
+                </div>
+            </div>
+
+            <!-- Platform Selection Tips -->
+            <div class="assignment" style="margin-top: 40px;">
+                <h3><i class="fas fa-lightbulb"></i> Platform Selection Tips</h3>
+                <p>Choosing the right platform depends on your needs, technical skills, and portfolio goals:</p>
+                
+                <div class="expandable-section">
+                    <div class="expandable-header" onclick="toggleExpandable(this)">
+                        <h3>Consider Your Technical Skills</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="expandable-content">
+                        <p>Select a platform that matches your technical comfort level. Beginners may prefer drag-and-drop builders like Wix or Weebly, while those with coding skills might choose GitHub Pages or WordPress with custom coding.</p>
+                        <ul>
+                            <li>No-code options: Wix, Weebly, Squarespace</li>
+                            <li>Some coding required: WordPress, GitHub Pages</li>
+                            <li>Industry-specific: Behance (design), Journo Portfolio (writing)</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="expandable-section">
+                    <div class="expandable-header" onclick="toggleExpandable(this)">
+                        <h3>Evaluate Your Content Needs</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="expandable-content">
+                        <p>Different platforms excel with different types of content. Consider what you need to showcase:</p>
+                        <ul>
+                            <li>Visual content: Behance, Adobe Portfolio, Portfoliobox</li>
+                            <li>Writing samples: Journo Portfolio, Medium, WordPress</li>
+                            <li>Code projects: GitHub Pages, CodePen</li>
+                            <li>Mixed media: Wix, Squarespace, WordPress</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Gained Section -->
+    <section class="content-section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Skills Gained</h2>
+                <p>Strategic and technical competencies developed through portfolio management learning</p>
+            </div>
+            
+            <div class="skills-grid">
+                <div class="skill-item">
+                    <i class="fas fa-filter"></i>
+                    <h4>Strategic Curation</h4>
+                    <p>Ability to selectively gather and present work samples to construct a compelling professional narrative</p>
+                </div>
+                
+                <div class="skill-item">
+                    <i class="fas fa-user-tag"></i>
+                    <h4>Personal Branding</h4>
+                    <p>Understanding how to use a portfolio to define and communicate unique value proposition</p>
+                </div>
+                
+                <div class="skill-item">
+                    <i class="fas fa-brain"></i>
+                    <h4>Metacognitive Documentation</h4>
+                    <p>Skill of documenting process and learning outcomes for reflective purposes</p>
+                </div>
+                
+                <div class="skill-item">
+                    <i class="fas fa-tools"></i>
+                    <h4>Technical Proficiency Awareness</h4>
+                    <p>Knowledge of digital tools and ability to choose the right platform for specific goals</p>
+                </div>
+                
+                <div class="skill-item">
+                    <i class="fas fa-tasks"></i>
+                    <h4>Project Management</h4>
+                    <p>Applying structured processes to complex projects from inception to maintenance</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio Tips Section - New Section -->
+    <section class="content-section" style="background: rgba(0,0,0,0.2);">
+        <div class="container">
+            <div class="section-title">
+                <h2>Key Portfolio Management Tips</h2>
+                <p>Practical advice for creating and maintaining an effective portfolio</p>
+            </div>
+            
+            <div class="tips-content">
+                <div class="tip-item">
+                    <div class="tip-icon">
+                        <i class="fas fa-crosshairs"></i>
+                    </div>
+                    <div class="tip-text">
+                        <h4>Define Clear Objectives</h4>
+                        <p>Before creating your portfolio, establish clear goals and identify your target audience to ensure your content is focused and relevant.</p>
+                    </div>
+                </div>
+                
+                <div class="tip-item">
+                    <div class="tip-icon">
+                        <i class="fas fa-edit"></i>
+                    </div>
+                    <div class="tip-text">
+                        <h4>Showcase Your Best Work</h4>
+                        <p>Quality over quantity - select your strongest, most relevant projects and provide context about your role and contributions.</p>
+                    </div>
+                </div>
+                
+                <div class="tip-item">
+                    <div class="tip-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <div class="tip-text">
+                        <h4>Demonstrate Growth</h4>
+                        <p>Include examples that show progression in your skills and accomplishments over time to illustrate your development journey.</p>
+                    </div>
+                </div>
+                
+                <div class="tip-item">
+                    <div class="tip-icon">
+                        <i class="fas fa-sync-alt"></i>
+                    </div>
+                    <div class="tip-text">
+                        <h4>Keep It Updated</h4>
+                        <p>Regularly refresh your portfolio with new projects, skills, and achievements to maintain its relevance and accuracy.</p>
+                    </div>
+                </div>
+                
+                <div class="tip-item">
+                    <div class="tip-icon">
+                        <i class="fas fa-mobile-alt"></i>
+                    </div>
+                    <div class="tip-text">
+                        <h4>Optimize for All Devices</h4>
+                        <p>Ensure your portfolio displays correctly on desktops, tablets, and mobile devices since viewers may access it from various platforms.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- My Portfolio Section -->
+    <section class="content-section">
+        <div class="container">
+            <div class="section-title">
+                <h2>My Portfolio Implementation</h2>
+                <p>Applying portfolio management principles to this professional skills portfolio</p>
+            </div>
+            
+            <div class="my-portfolio">
+                <h3>This Portfolio as an Assessment Portfolio</h3>
+                <p>This digital portfolio serves as an assessment portfolio demonstrating my understanding and application of professional skills learned throughout my university course. It follows the principles of effective portfolio management by:</p>
+                
+                <div class="portfolio-stats">
+                    <div class="stat-item">
+                        <span class="number">4</span>
+                        <span class="label">Key Skills Covered</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="number">17</span>
+                        <span class="label">Portfolio Principles Applied</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="number">12+</span>
+                        <span class="label">Platform Options Researched</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="number">100%</span>
+                        <span class="label">Digital Format</span>
+                    </div>
+                </div>
+                
+                <p><strong>Portfolio Purpose:</strong> To document my learning journey in Professional Skills at University of Bedfordshire and demonstrate competency to potential employers.</p>
+                <p><strong>Target Audience:</strong> Academic evaluators, potential employers, and professional connections.</p>
+                <p><strong>Content Strategy:</strong> Each section provides both theoretical understanding and practical application of professional skills.</p>
+            </div>
+
+            <div class="download-cv" style="text-align: center; margin-top: 30px;">
+                <a href="#" class="btn btn-outline" id="downloadPortfolio">
+                    <i class="fas fa-download"></i> Download Portfolio Guide
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta">
+        <div class="container">
+            <h2>Ready to Develop Your Professional Portfolio?</h2>
+            <p>I've developed comprehensive portfolio management skills through my Professional Skills course and can apply these principles to create compelling career documents.</p>
+            <a href="Portfolio.html#contact" class="btn btn-light">Get In Touch</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="logo">
+                    <i class="fas fa-graduation-cap"></i> Lakshan K.P.B
+                </div>
+                <div class="social-links">
+                    <a href=""><i class="fab fa-linkedin"></i></a>
+                    <a href=""><i class="fab fa-twitter"></i></a>
+                    <a href=""><i class="fab fa-github"></i></a>
+                    <a href=""><i class="fas fa-envelope"></i></a>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2025 Lakshan K.P.B - Professional Skills Portfolio. All Rights Reserved. | SLIIT City Uni.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        const menuToggle = document.getElementById('menuToggle');
+        const navMenu = document.getElementById('navMenu');
+        
+        menuToggle.addEventListener('click', () => {
+            navMenu.classList.toggle('show');
+        });
+
+        // Header scroll effect
+        window.addEventListener('scroll', function() {
+            const header = document.querySelector('header');
+            if (window.scrollY > 100) {
+                header.style.padding = '10px 0';
+                header.style.background = 'rgba(26, 26, 46, 0.98)';
+            } else {
+                header.style.padding = '20px 0';
+                header.style.background = 'rgba(26, 26, 46, 0.95)';
+            }
+            
+            // Back to top button visibility
+            const backToTopBtn = document.querySelector('.back-to-top');
+            if (window.scrollY > 300) {
+                backToTopBtn.classList.add('visible');
+            } else {
+                backToTopBtn.classList.remove('visible');
+            }
+        });
+
+        // Back to top functionality
+        document.querySelector('.back-to-top').addEventListener('click', function() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+
+        // Expandable sections
+        function toggleExpandable(header) {
+            const content = header.nextElementSibling;
+            const icon = header.querySelector('i');
+            
+            content.classList.toggle('active');
+            
+            if (content.classList.contains('active')) {
+                icon.classList.remove('fa-chevron-down');
+                icon.classList.add('fa-chevron-up');
+            } else {
+                icon.classList.remove('fa-chevron-up');
+                icon.classList.add('fa-chevron-down');
+            }
+        }
+
+        // Portfolio Guide Download functionality
+        const downloadPortfolio = document.getElementById('downloadPortfolio');
+        
+        downloadPortfolio.addEventListener('click', (e) => {
+            e.preventDefault();
+            
+            // Create a simple portfolio guide content
+            const portfolioContent = `
+                Portfolio Management Guide
+                By Lakshan K.P.B
+                
+                ESSENTIAL COMPONENTS OF A PORTFOLIO
+                1. Introduction/About Me
+                - Professional biography
+                - Career objectives
+                - Personal brand statement
+                
+                2. Work Samples/Projects
+                - Relevant project examples
+                - Before/after comparisons
+                - Process documentation
+                - Results and impact
+                
+                3. Education & Certifications
+                - Academic qualifications
+                - Professional certifications
+                - Workshops and training
+                - Relevant coursework
+                
+                4. Skills & Competencies
+                - Technical skills
+                - Soft skills
+                - Tools and technologies
+                - Skill proficiency levels
+                
+                5. Achievements & Awards
+                - Professional recognitions
+                - Awards and honors
+                - Publications or presentations
+                - Quantifiable successes
+                
+                6. Reflections & Insights
+                - Learning journey documentation
+                - Challenges and solutions
+                - Future goals
+                - Personal growth insights
+                
+                PORTFOLIO TYPES
+                - Personal Portfolio: Creative work and interests
+                - Career/Dossier Portfolio: Professional achievements
+                - Employment Portfolio: Work-related documents
+                - Assessment Portfolio: Learning progress
+                
+                KEY TIPS
+                - Define clear objectives and target audience
+                - Showcase your best work with context
+                - Demonstrate growth and development
+                - Keep your portfolio updated regularly
+                - Optimize for all devices
+            `;
+            
+            // Create a blob and download link
+            const blob = new Blob([portfolioContent], { type: 'text/plain' });
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = 'Portfolio_Management_Guide.txt';
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+            URL.revokeObjectURL(url);
+            
+            // Show a confirmation message
+            alert('Portfolio management guide downloaded successfully!');
+        });
+
+        // Add animation to elements on scroll
+        const animatedElements = document.querySelectorAll('.note-card, .skill-item, .assignment, .component-card, .tip-item, .type-card, .step-item, .platform-card');
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if(entry.isIntersecting) {
+                    entry.target.style.opacity = 1;
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, { threshold: 0.1 });
+        
+        animatedElements.forEach(element => {
+            element.style.opacity = 0;
+            element.style.transform = 'translateY(20px)';
+            element.style.transition = 'opacity 0.5s, transform 0.5s';
+            observer.observe(element);
+        });
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if(targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if(targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                    
+                    // Close mobile menu if open
+                    if (navMenu.classList.contains('show')) {
+                        navMenu.classList.remove('show');
+                    }
+                }
+            });
+        });
+    </script>
+</body>
+</html>

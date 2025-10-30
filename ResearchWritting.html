@@ -1,0 +1,1618 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Master research writing skills with structured methodology and academic writing principles">
+    <title>Research Writing | Lakshan's Professional Skills Portfolio</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        :root {
+            --primary: #1a1a2e;
+            --secondary: #16213e;
+            --accent: #e94560;
+            --gold: #d4af37;
+            --light: #f0f0f0;
+            --text: #333333;
+            --success: #2ecc71;
+            --info: #3498db;
+            --transition: all 0.3s ease;
+        }
+
+        body {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            color: var(--light);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header Styles */
+        header {
+            padding: 20px 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            background: rgba(22, 33, 62, 0.95);
+            backdrop-filter: blur(10px);
+            transition: var(--transition);
+            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        header.scrolled {
+            padding: 15px 0;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 28px;
+            font-weight: 700;
+            color: var(--gold);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            transition: var(--transition);
+        }
+
+        .logo:hover {
+            transform: scale(1.05);
+        }
+
+        .logo i {
+            margin-right: 10px;
+            font-size: 32px;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+
+        nav ul li {
+            margin-left: 30px;
+        }
+
+        nav ul li a {
+            color: var(--light);
+            text-decoration: none;
+            font-weight: 500;
+            transition: var(--transition);
+            position: relative;
+            padding: 5px 0;
+        }
+
+        nav ul li a:hover,
+        nav ul li a.active {
+            color: var(--gold);
+        }
+
+        nav ul li a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: 0;
+            left: 0;
+            background-color: var(--gold);
+            transition: width 0.3s;
+        }
+
+        nav ul li a:hover::after,
+        nav ul li a.active::after {
+            width: 100%;
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            color: var(--light);
+            font-size: 24px;
+            cursor: pointer;
+        }
+
+        /* Research Hero Section */
+        .research-hero {
+            padding: 180px 0 100px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            background: linear-gradient(rgba(26, 26, 46, 0.85), rgba(22, 33, 62, 0.85)), url('https://images.unsplash.com/photo-1559757148-5c350d0d3c56?ixlib=rb-4.0.3&auto=format&fit=crop&w=1500&q=80');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+        }
+
+        .research-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at center, rgba(52, 152, 219, 0.1) 0%, transparent 70%);
+            z-index: -1;
+        }
+
+        .research-hero h1 {
+            font-size: 52px;
+            margin-bottom: 20px;
+            font-weight: 700;
+            background: linear-gradient(45deg, var(--info), #89c4f4);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: fadeInUp 1s ease;
+        }
+
+        .research-hero p {
+            font-size: 22px;
+            max-width: 800px;
+            margin: 0 auto 30px;
+            color: #cccccc;
+            animation: fadeInUp 1s ease 0.2s both;
+        }
+
+        .btn {
+            display: inline-block;
+            background: var(--info);
+            color: white;
+            padding: 14px 35px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: var(--transition);
+            border: 2px solid var(--info);
+            margin-top: 20px;
+            animation: fadeInUp 1s ease 0.4s both;
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+        }
+
+        .btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+            transition: left 0.5s;
+            z-index: -1;
+        }
+
+        .btn:hover {
+            background: transparent;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .btn:hover::before {
+            left: 100%;
+        }
+
+        /* Content Sections */
+        .content-section {
+            padding: 100px 0;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 60px;
+            position: relative;
+        }
+
+        .section-title h2 {
+            font-size: 40px;
+            color: var(--info);
+            margin-bottom: 15px;
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-title h2::after {
+            content: '';
+            position: absolute;
+            width: 60px;
+            height: 4px;
+            background: linear-gradient(90deg, var(--info), var(--accent));
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            border-radius: 2px;
+        }
+
+        .section-title p {
+            color: #cccccc;
+            max-width: 600px;
+            margin: 25px auto 0;
+            font-size: 18px;
+        }
+
+        /* Notes & Summary Section */
+        .notes-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-bottom: 50px;
+        }
+
+        .note-card {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 15px;
+            padding: 30px;
+            transition: var(--transition);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            position: relative;
+            overflow: hidden;
+            text-align: center;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .note-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: linear-gradient(90deg, var(--info), var(--accent));
+        }
+
+        .note-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        .note-icon {
+            font-size: 50px;
+            color: var(--info);
+            margin-bottom: 20px;
+            transition: var(--transition);
+        }
+
+        .note-card:hover .note-icon {
+            transform: scale(1.1);
+        }
+
+        .note-card h3 {
+            font-size: 22px;
+            margin-bottom: 15px;
+            color: var(--light);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .note-card h3 i {
+            margin-right: 10px;
+            color: var(--info);
+        }
+
+        .note-card ul {
+            padding-left: 20px;
+            margin-top: 15px;
+            text-align: left;
+        }
+
+        .note-card li {
+            margin-bottom: 8px;
+            color: #cccccc;
+            position: relative;
+            padding-left: 10px;
+        }
+
+        .note-card li::before {
+            content: "▸";
+            color: var(--info);
+            position: absolute;
+            left: -10px;
+        }
+
+        /* Research Components Section */
+        .components-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-bottom: 50px;
+        }
+
+        .component-card {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 15px;
+            padding: 30px;
+            transition: var(--transition);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            position: relative;
+            overflow: hidden;
+            text-align: center;
+            height: 100%;
+        }
+
+        .component-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        .component-number {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background: var(--info);
+            color: var(--primary);
+            width: 35px;
+            height: 35px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 16px;
+            transition: var(--transition);
+        }
+
+        .component-card:hover .component-number {
+            transform: scale(1.1);
+        }
+
+        .component-icon {
+            font-size: 50px;
+            color: var(--info);
+            margin-bottom: 20px;
+            transition: var(--transition);
+        }
+
+        .component-card:hover .component-icon {
+            transform: scale(1.1);
+        }
+
+        .component-card h3 {
+            font-size: 22px;
+            margin-bottom: 15px;
+            color: var(--light);
+        }
+
+        .component-card ul {
+            list-style-type: none;
+            padding-left: 0;
+            text-align: left;
+        }
+
+        .component-card ul li {
+            margin-bottom: 10px;
+            color: #cccccc;
+            position: relative;
+            padding-left: 20px;
+        }
+
+        .component-card ul li:before {
+            content: "•";
+            color: var(--info);
+            font-weight: bold;
+            position: absolute;
+            left: 0;
+        }
+
+        /* Progress Tracker */
+        .progress-tracker {
+            display: flex;
+            justify-content: space-between;
+            margin: 40px 0;
+            position: relative;
+        }
+
+        .progress-tracker::before {
+            content: '';
+            position: absolute;
+            top: 20px;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: rgba(255, 255, 255, 0.1);
+            z-index: 1;
+        }
+
+        .progress-step {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            position: relative;
+            z-index: 2;
+            flex: 1;
+        }
+
+        .step-circle {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 10px;
+            font-weight: bold;
+            transition: var(--transition);
+            border: 2px solid transparent;
+        }
+
+        .step-circle.active {
+            background: var(--info);
+            color: var(--primary);
+            border-color: var(--info);
+        }
+
+        .step-label {
+            font-size: 14px;
+            text-align: center;
+            max-width: 100px;
+        }
+
+        /* Reflection Section */
+        .reflection-content {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 15px;
+            padding: 40px;
+            margin-bottom: 50px;
+            backdrop-filter: blur(10px);
+            border-left: 5px solid var(--info);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .reflection-content::before {
+            content: '"';
+            position: absolute;
+            top: 10px;
+            left: 20px;
+            font-size: 100px;
+            color: rgba(255, 255, 255, 0.05);
+            font-family: serif;
+            line-height: 1;
+        }
+
+        .reflection-content p {
+            margin-bottom: 20px;
+            color: #cccccc;
+            line-height: 1.8;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Assignments Section */
+        .assignment {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 15px;
+            padding: 30px;
+            margin-bottom: 30px;
+            backdrop-filter: blur(10px);
+            transition: var(--transition);
+        }
+
+        .assignment:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .assignment h3 {
+            color: var(--info);
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+        }
+
+        .assignment h3 i {
+            margin-right: 10px;
+        }
+
+        .keyword-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin: 15px 0;
+        }
+
+        .keyword {
+            background: rgba(52, 152, 219, 0.2);
+            color: var(--info);
+            padding: 8px 15px;
+            border-radius: 20px;
+            font-size: 14px;
+            transition: var(--transition);
+            border: 1px solid rgba(52, 152, 219, 0.3);
+        }
+
+        .keyword:hover {
+            background: rgba(52, 152, 219, 0.3);
+            transform: translateY(-2px);
+        }
+
+        .comparison {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .before, .after {
+            padding: 20px;
+            border-radius: 10px;
+            transition: var(--transition);
+        }
+
+        .before {
+            background: rgba(233, 69, 96, 0.1);
+            border-left: 3px solid var(--accent);
+        }
+
+        .after {
+            background: rgba(46, 204, 113, 0.1);
+            border-left: 3px solid var(--success);
+        }
+
+        .before:hover, .after:hover {
+            transform: translateY(-5px);
+        }
+
+        .before h4, .after h4 {
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+        }
+
+        .before h4 {
+            color: var(--accent);
+        }
+
+        .after h4 {
+            color: var(--success);
+        }
+
+        .before h4 i, .after h4 i {
+            margin-right: 8px;
+        }
+
+        /* Skills Gained Section */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 25px;
+        }
+
+        .skill-item {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 10px;
+            padding: 25px 20px;
+            text-align: center;
+            transition: var(--transition);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .skill-item:hover {
+            transform: translateY(-10px);
+            background: rgba(255, 255, 255, 0.08);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .skill-item i {
+            font-size: 40px;
+            color: var(--info);
+            margin-bottom: 20px;
+            transition: var(--transition);
+        }
+
+        .skill-item:hover i {
+            transform: scale(1.1);
+        }
+
+        .skill-item h4 {
+            margin-bottom: 15px;
+            color: var(--light);
+            font-size: 20px;
+        }
+
+        .skill-item p {
+            color: #cccccc;
+            font-size: 15px;
+            line-height: 1.6;
+        }
+
+        /* Research Tips Section */
+        .tips-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .tip-item {
+            margin-bottom: 30px;
+            padding: 25px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 10px;
+            display: flex;
+            align-items: flex-start;
+            gap: 20px;
+            backdrop-filter: blur(10px);
+            transition: var(--transition);
+        }
+
+        .tip-item:hover {
+            transform: translateX(10px);
+            background: rgba(255, 255, 255, 0.08);
+        }
+
+        .tip-icon {
+            background: var(--info);
+            color: white;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            font-size: 24px;
+            transition: var(--transition);
+        }
+
+        .tip-item:hover .tip-icon {
+            transform: rotate(10deg) scale(1.1);
+        }
+
+        .tip-text h4 {
+            font-size: 22px;
+            margin-bottom: 10px;
+            color: var(--light);
+        }
+
+        .tip-text p {
+            color: #cccccc;
+            line-height: 1.7;
+        }
+
+        /* Research Paper Preview */
+        .paper-preview {
+            background: white;
+            border-radius: 10px;
+            padding: 40px;
+            margin: 40px 0;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            color: var(--text);
+            transition: var(--transition);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .paper-preview:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
+        }
+
+        .paper-preview::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: linear-gradient(90deg, var(--info), var(--accent));
+        }
+
+        .paper-header {
+            text-align: center;
+            margin-bottom: 30px;
+            padding-bottom: 20px;
+            border-bottom: 2px solid var(--info);
+        }
+
+        .paper-header h2 {
+            color: var(--primary);
+            font-size: 28px;
+            margin-bottom: 5px;
+        }
+
+        .paper-header p {
+            color: #666;
+        }
+
+        .paper-section {
+            margin-bottom: 25px;
+        }
+
+        .paper-section h3 {
+            color: var(--primary);
+            border-bottom: 1px solid #eee;
+            padding-bottom: 5px;
+            margin-bottom: 15px;
+        }
+
+        .paper-item {
+            margin-bottom: 15px;
+        }
+
+        .paper-item h4 {
+            color: #444;
+            margin-bottom: 5px;
+        }
+
+        .paper-item .date {
+            color: #666;
+            font-style: italic;
+            margin-bottom: 5px;
+        }
+
+        .cta {
+            padding: 120px 0;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('https://images.unsplash.com/photo-1450101499163-c8848c66ca85?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80');
+            background-size: cover;
+            background-position: center;
+            opacity: 0.1;
+            z-index: 0;
+        }
+
+        .cta .container {
+            position: relative;
+            z-index: 1;
+        }
+
+        .cta h2 {
+            font-size: 42px;
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+
+        .cta p {
+            font-size: 20px;
+            max-width: 700px;
+            margin: 0 auto 30px;
+            line-height: 1.7;
+        }
+
+        .btn-light {
+            background: transparent;
+            color: white;
+            border: 2px solid white;
+        }
+
+        .btn-light:hover {
+            background: white;
+            color: var(--primary);
+        }
+
+        /* Scroll to Top Button */
+        .scroll-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 50px;
+            height: 50px;
+            background: var(--info);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+            cursor: pointer;
+            transition: var(--transition);
+            opacity: 0;
+            visibility: hidden;
+            z-index: 999;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .scroll-to-top.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .scroll-to-top:hover {
+            background: var(--accent);
+            transform: translateY(-5px);
+        }
+
+        /* Footer */
+        footer {
+            padding: 50px 0 30px;
+            text-align: center;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            margin-top: 50px;
+        }
+
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 30px;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 20px;
+        }
+
+        .social-links a {
+            color: var(--light);
+            font-size: 20px;
+            transition: var(--transition);
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(255, 255, 255, 0.05);
+        }
+
+        .social-links a:hover {
+            color: var(--info);
+            transform: translateY(-3px);
+            background: rgba(255, 255, 255, 0.1);
+        }
+
+        .copyright {
+            color: #999;
+            font-size: 14px;
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Responsive Design */
+        @media (max-width: 992px) {
+            .research-hero h1 {
+                font-size: 42px;
+            }
+            
+            .research-hero p {
+                font-size: 20px;
+            }
+            
+            .section-title h2 {
+                font-size: 36px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .header-content {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            nav ul {
+                margin-top: 20px;
+                justify-content: center;
+                flex-wrap: wrap;
+            }
+
+            nav ul li {
+                margin: 10px;
+            }
+
+            .research-hero {
+                padding: 150px 0 80px;
+            }
+
+            .research-hero h1 {
+                font-size: 36px;
+            }
+            
+            .research-hero p {
+                font-size: 18px;
+            }
+
+            .comparison {
+                grid-template-columns: 1fr;
+            }
+
+            .skills-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-content {
+                flex-direction: column;
+                gap: 20px;
+            }
+
+            .tip-item {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .progress-tracker {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 30px;
+            }
+            
+            .progress-tracker::before {
+                display: none;
+            }
+            
+            .progress-step {
+                flex-direction: row;
+                align-items: center;
+                width: 100%;
+            }
+            
+            .step-circle {
+                margin-right: 15px;
+                margin-bottom: 0;
+            }
+            
+            .cta h2 {
+                font-size: 32px;
+            }
+            
+            .cta p {
+                font-size: 18px;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .container {
+                padding: 0 15px;
+            }
+            
+            .research-hero {
+                padding: 130px 0 60px;
+            }
+            
+            .research-hero h1 {
+                font-size: 32px;
+            }
+            
+            .section-title h2 {
+                font-size: 28px;
+            }
+            
+            .content-section {
+                padding: 70px 0;
+            }
+            
+            .notes-container,
+            .components-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .paper-preview {
+                padding: 25px;
+            }
+            
+            .cta {
+                padding: 80px 0;
+            }
+            
+            .mobile-menu-btn {
+                display: block;
+                position: absolute;
+                top: 20px;
+                right: 20px;
+            }
+            
+            nav {
+                display: none;
+                width: 100%;
+                margin-top: 20px;
+            }
+            
+            nav.active {
+                display: block;
+            }
+            
+            nav ul {
+                flex-direction: column;
+            }
+            
+            nav ul li {
+                margin: 10px 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Scroll to Top Button -->
+    <div class="scroll-to-top">
+        <i class="fas fa-arrow-up"></i>
+    </div>
+
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <a href="Portfolio.html" class="logo">
+                    <i class="fas fa-graduation-cap"></i> Lakshan K.P.B
+                </a>
+                <button class="mobile-menu-btn">
+                    <i class="fas fa-bars"></i>
+                </button>
+                <nav>
+                    <ul>
+                        <li><a href="Portfolio.html">Home</a></li>
+                        <li><a href="Portfolio.html#skills">Skills</a></li>
+                        <li><a href="Portfolio.html#projects">Projects</a></li>
+                        <li><a href="Portfolio.html#contact">Contact</a></li>
+                        <li><a href="ResearchWritting.html" class="active">Research Writing</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Research Hero Section -->
+    <section class="research-hero">
+        <div class="container">
+            <h1>Research Writing</h1>
+            <p>Developing scholarly communication skills through structured research methodology and academic writing</p>
+            <a href="#components" class="btn">Explore Research Components</a>
+        </div>
+    </section>
+
+    <!-- Notes & Summary Section -->
+    <section class="content-section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Lecture Notes & Summary</h2>
+                <p>Key principles and concepts from the Research Writing lecture</p>
+            </div>
+            
+            <div class="notes-container">
+                <div class="note-card">
+                    <div class="note-icon">
+                        <i class="fas fa-search"></i>
+                    </div>
+                    <h3>Purpose of Research Writing</h3>
+                    <p>Research writing is a systematic process of communicating scholarly findings, contributing to knowledge, and engaging in academic discourse through structured documentation.</p>
+                </div>
+                
+                <div class="note-card">
+                    <div class="note-icon">
+                        <i class="fas fa-key"></i>
+                    </div>
+                    <h3>Key Principles</h3>
+                    <ul>
+                        <li><strong>Academic Integrity:</strong> Proper citation and avoidance of plagiarism</li>
+                        <li><strong>Methodological Rigor:</strong> Systematic approach to research design</li>
+                        <li><strong>Clarity & Precision:</strong> Clear communication of complex ideas</li>
+                        <li><strong>Critical Analysis:</strong> Evaluation of evidence and arguments</li>
+                    </ul>
+                </div>
+                
+                <div class="note-card">
+                    <div class="note-icon">
+                        <i class="fas fa-file-alt"></i>
+                    </div>
+                    <h3>Research Structure</h3>
+                    <p>Standard research papers follow the IMRaD format: Introduction, Methods, Results, and Discussion, with additional sections for abstract, references, and appendices.</p>
+                </div>
+                
+                <div class="note-card">
+                    <div class="note-icon">
+                        <i class="fas fa-list-ol"></i>
+                    </div>
+                    <h3>Essential Components</h3>
+                    <ul>
+                        <li>Research Question & Hypothesis</li>
+                        <li>Literature Review</li>
+                        <li>Methodology Section</li>
+                        <li>Data Analysis & Results</li>
+                        <li>Discussion & Conclusion</li>
+                        <li>References & Citations</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Research Components Section -->
+    <section class="content-section" style="background: rgba(0,0,0,0.2);" id="components">
+        <div class="container">
+            <div class="section-title">
+                <h2>Essential Research Components</h2>
+                <p>Key elements that constitute a comprehensive research paper</p>
+            </div>
+            
+            <!-- Progress Tracker -->
+            <div class="progress-tracker">
+                <div class="progress-step">
+                    <div class="step-circle active">1</div>
+                    <div class="step-label">Research Question</div>
+                </div>
+                <div class="progress-step">
+                    <div class="step-circle">2</div>
+                    <div class="step-label">Literature Review</div>
+                </div>
+                <div class="progress-step">
+                    <div class="step-circle">3</div>
+                    <div class="step-label">Methodology</div>
+                </div>
+                <div class="progress-step">
+                    <div class="step-circle">4</div>
+                    <div class="step-label">Results</div>
+                </div>
+                <div class="progress-step">
+                    <div class="step-circle">5</div>
+                    <div class="step-label">Discussion</div>
+                </div>
+                <div class="progress-step">
+                    <div class="step-circle">6</div>
+                    <div class="step-label">Conclusion</div>
+                </div>
+            </div>
+            
+            <div class="components-grid">
+                <div class="component-card">
+                    <div class="component-number">01</div>
+                    <div class="component-icon">
+                        <i class="fas fa-question-circle"></i>
+                    </div>
+                    <h3>Research Question</h3>
+                    <ul>
+                        <li>Clear, focused, and researchable question</li>
+                        <li>Addresses a gap in existing literature</li>
+                        <li>Specific enough to be answered within scope</li>
+                        <li>Leads to testable hypothesis</li>
+                    </ul>
+                </div>
+                
+                <div class="component-card">
+                    <div class="component-number">02</div>
+                    <div class="component-icon">
+                        <i class="fas fa-book"></i>
+                    </div>
+                    <h3>Literature Review</h3>
+                    <ul>
+                        <li>Comprehensive survey of existing research</li>
+                        <li>Identifies theoretical frameworks</li>
+                        <li>Highlights research gaps</li>
+                        <li>Contextualizes current study</li>
+                    </ul>
+                </div>
+                
+                <div class="component-card">
+                    <div class="component-number">03</div>
+                    <div class="component-icon">
+                        <i class="fas fa-flask"></i>
+                    </div>
+                    <h3>Methodology</h3>
+                    <ul>
+                        <li>Detailed research design description</li>
+                        <li>Data collection procedures</li>
+                        <li>Sampling techniques</li>
+                        <li>Ethical considerations</li>
+                    </ul>
+                </div>
+                
+                <div class="component-card">
+                    <div class="component-number">04</div>
+                    <div class="component-icon">
+                        <i class="fas fa-chart-bar"></i>
+                    </div>
+                    <h3>Results</h3>
+                    <ul>
+                        <li>Objective presentation of findings</li>
+                        <li>Use of tables, charts, and figures</li>
+                        <li>Statistical analysis results</li>
+                        <li>No interpretation at this stage</li>
+                    </ul>
+                </div>
+                
+                <div class="component-card">
+                    <div class="component-number">05</div>
+                    <div class="component-icon">
+                        <i class="fas fa-comments"></i>
+                    </div>
+                    <h3>Discussion</h3>
+                    <ul>
+                        <li>Interpretation of results</li>
+                        <li>Comparison with existing literature</li>
+                        <li>Explanation of unexpected findings</li>
+                        <li>Limitations and implications</li>
+                    </ul>
+                </div>
+                
+                <div class="component-card">
+                    <div class="component-number">06</div>
+                    <div class="component-icon">
+                        <i class="fas fa-flag-checkered"></i>
+                    </div>
+                    <h3>Conclusion</h3>
+                    <ul>
+                        <li>Summary of key findings</li>
+                        <li>Answer to research question</li>
+                        <li>Practical and theoretical implications</li>
+                        <li>Suggestions for future research</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Reflection Section -->
+    <section class="content-section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Personal Reflection</h2>
+                <p>How this lecture transformed my approach to academic writing</p>
+            </div>
+            
+            <div class="reflection-content">
+                <p>This research writing lecture fundamentally changed my understanding of academic communication. I learned that research writing is not just about presenting information but about constructing a coherent argument supported by evidence. The systematic approach to structuring a research paper using the IMRaD format provided a clear framework that I can apply to any academic writing task.</p>
+                
+                <p>The most challenging aspect was understanding the distinction between the Results and Discussion sections. Initially, I tended to interpret findings in the Results section, but I now understand the importance of keeping these sections separate. The Results should objectively present the data, while the Discussion provides interpretation, context, and implications.</p>
+                
+                <p>Learning about different citation styles (APA, MLA, Chicago) and their appropriate applications was particularly valuable. I now understand that proper citation is not just about avoiding plagiarism but about participating in academic discourse and giving credit where it's due. This knowledge will be essential for my future academic work, especially my final year project.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Assignments Section -->
+    <section class="content-section" style="background: rgba(0,0,0,0.2);">
+        <div class="container">
+            <div class="section-title">
+                <h2>Practical Assignments</h2>
+                <p>Applying research writing principles to academic scenarios</p>
+            </div>
+            
+            <div class="assignment">
+                <h3><i class="fas fa-search"></i> Research Question Formulation</h3>
+                <p><strong>Topic Area:</strong> Impact of Agile Methodology on Software Project Success</p>
+                
+                <p><strong>Research Questions Developed:</strong></p>
+                <div class="keyword-list">
+                    <span class="keyword">How does Agile methodology affect project completion rates compared to Waterfall?</span>
+                    <span class="keyword">What are the key factors influencing Agile implementation success?</span>
+                    <span class="keyword">How do team dynamics change when transitioning to Agile frameworks?</span>
+                </div>
+                
+                <p><strong>Action:</strong> I selected the most focused research question and developed a testable hypothesis: "Teams using Agile methodology will demonstrate higher project completion rates and client satisfaction compared to teams using Waterfall methodology."</p>
+            </div>
+            
+            <div class="assignment">
+                <h3><i class="fas fa-edit"></i> Literature Review Practice</h3>
+                <p>Transforming a simple summary into a critical literature review:</p>
+                
+                <div class="comparison">
+                    <div class="before">
+                        <h4><i class="fas fa-times-circle"></i> Before</h4>
+                        <p>"Many studies have looked at Agile methodology. Some found it works well, others found issues."</p>
+                    </div>
+                    <div class="after">
+                        <h4><i class="fas fa-check-circle"></i> After</h4>
+                        <p>"While numerous studies (Smith, 2020; Johnson, 2019) demonstrate Agile's effectiveness in improving project flexibility, recent research (Chen, 2022) highlights implementation challenges in large organizations, suggesting a contingency approach may be necessary."</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Gained Section -->
+    <section class="content-section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Skills Gained</h2>
+                <p>Academic and research competencies developed from this lecture</p>
+            </div>
+            
+            <div class="skills-grid">
+                <div class="skill-item">
+                    <i class="fas fa-search"></i>
+                    <h4>Research Design</h4>
+                    <p>Ability to formulate research questions and design appropriate methodologies to address them</p>
+                </div>
+                
+                <div class="skill-item">
+                    <i class="fas fa-book"></i>
+                    <h4>Literature Synthesis</h4>
+                    <p>Skill in critically analyzing existing research and synthesizing findings to identify gaps</p>
+                </div>
+                
+                <div class="skill-item">
+                    <i class="fas fa-pen-fancy"></i>
+                    <h4>Academic Writing</h4>
+                    <p>Writing with clarity, precision, and appropriate academic tone for scholarly audiences</p>
+                </div>
+                
+                <div class="skill-item">
+                    <i class="fas fa-quote-right"></i>
+                    <h4>Citation Mastery</h4>
+                    <p>Proficiency in various citation styles and understanding of academic integrity principles</p>
+                </div>
+                
+                <div class="skill-item">
+                    <i class="fas fa-chart-line"></i>
+                    <h4>Critical Analysis</h4>
+                    <p>Ability to evaluate evidence, construct arguments, and draw valid conclusions from data</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Research Tips Section -->
+    <section class="content-section" style="background: rgba(0,0,0,0.2);">
+        <div class="container">
+            <div class="section-title">
+                <h2>Key Research Writing Tips</h2>
+                <p>Practical advice for effective academic writing</p>
+            </div>
+            
+            <div class="tips-content">
+                <div class="tip-item">
+                    <div class="tip-icon">
+                        <i class="fas fa-search"></i>
+                    </div>
+                    <div class="tip-text">
+                        <h4>Start with a Clear Research Question</h4>
+                        <p>A well-defined research question guides your entire study and keeps your writing focused and purposeful.</p>
+                    </div>
+                </div>
+                
+                <div class="tip-item">
+                    <div class="tip-icon">
+                        <i class="fas fa-book"></i>
+                    </div>
+                    <div class="tip-text">
+                        <h4>Conduct Thorough Literature Review</h4>
+                        <p>Understand existing research to contextualize your study and identify genuine contributions to knowledge.</p>
+                    </div>
+                </div>
+                
+                <div class="tip-item">
+                    <div class="tip-icon">
+                        <i class="fas fa-edit"></i>
+                    </div>
+                    <div class="tip-text">
+                        <h4>Maintain Academic Tone</h4>
+                        <p>Use formal language, avoid contractions, and maintain objectivity throughout your writing.</p>
+                    </div>
+                </div>
+                
+                <div class="tip-item">
+                    <div class="tip-icon">
+                        <i class="fas fa-quote-right"></i>
+                    </div>
+                    <div class="tip-text">
+                        <h4>Cite Sources Properly</h4>
+                        <p>Use consistent citation style and ensure all borrowed ideas are properly attributed to avoid plagiarism.</p>
+                    </div>
+                </div>
+                
+                <div class="tip-item">
+                    <div class="tip-icon">
+                        <i class="fas fa-check-double"></i>
+                    </div>
+                    <div class="tip-text">
+                        <h4>Revise and Proofread</h4>
+                        <p>Allow time for multiple revisions and careful proofreading to eliminate errors and improve clarity.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Research Paper Preview -->
+    <section class="content-section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Research Paper Template Application</h2>
+                <p>Implementing research writing principles in a structured format</p>
+            </div>
+            
+            <div class="paper-preview">
+                <div class="paper-header">
+                    <h2>The Impact of Agile Methodology on IT Project Success</h2>
+                    <p>A Comparative Study of Software Development Teams</p>
+                    <p>Lakshan K.P.B | University of Bedfordshire</p>
+                </div>
+                
+                <div class="paper-section">
+                    <h3>Abstract</h3>
+                    <p>This study examines the impact of Agile methodology on project success metrics in software development. Using a mixed-methods approach, data was collected from 15 development teams across different organizations. Results indicate significantly higher success rates for teams using Agile compared to traditional Waterfall approaches, with particular benefits in client satisfaction and adaptability to changing requirements.</p>
+                </div>
+                
+                <div class="paper-section">
+                    <h3>Introduction</h3>
+                    <p>The software development industry has increasingly adopted Agile methodologies as an alternative to traditional Waterfall approaches. This research addresses the gap in empirical studies comparing the effectiveness of these methodologies in contemporary IT environments...</p>
+                </div>
+                
+                <div class="paper-section">
+                    <h3>Methodology</h3>
+                    <div class="paper-item">
+                        <h4>Research Design</h4>
+                        <p>A comparative case study approach was employed, analyzing project outcomes across multiple organizations...</p>
+                    </div>
+                    <div class="paper-item">
+                        <h4>Data Collection</h4>
+                        <p>Data was collected through semi-structured interviews, project documentation analysis, and success metric tracking...</p>
+                    </div>
+                </div>
+                
+                <div class="paper-section">
+                    <h3>References</h3>
+                    <div class="keyword-list" style="justify-content: flex-start;">
+                        <span class="keyword">Beck, K. (2001). Manifesto for Agile Software Development.</span>
+                        <span class="keyword">Smith, J. (2020). Agile Transformations in Large Organizations.</span>
+                        <span class="keyword">Johnson, L. (2019). Measuring Project Success Beyond Budget and Timeline.</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta">
+        <div class="container">
+            <h2>Ready to Develop Your Research Skills?</h2>
+            <p>I've developed comprehensive research writing skills through my Professional Skills course and can apply these principles to academic projects and professional reports.</p>
+            <a href="Portfolio.html#contact" class="btn btn-light">Get In Touch</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="logo">
+                    <i class="fas fa-graduation-cap"></i> Lakshan K.P.B
+                </div>
+                <div class="social-links">
+                    <a href=""><i class="fab fa-linkedin"></i></a>
+                    <a href=""><i class="fab fa-twitter"></i></a>
+                    <a href=""><i class="fab fa-github"></i></a>
+                    <a href=""><i class="fas fa-envelope"></i></a>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2025 Lakshan K.P.B - Professional Skills Portfolio. All Rights Reserved. | SLIIT City Uni.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Add animation to elements on scroll
+        const animatedElements = document.querySelectorAll('.note-card, .skill-item, .assignment, .component-card, .tip-item, .paper-preview');
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if(entry.isIntersecting) {
+                    entry.target.style.opacity = 1;
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, { threshold: 0.1 });
+        
+        animatedElements.forEach(element => {
+            element.style.opacity = 0;
+            element.style.transform = 'translateY(20px)';
+            element.style.transition = 'opacity 0.5s, transform 0.5s';
+            observer.observe(element);
+        });
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if(targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if(targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // Header scroll effect
+        window.addEventListener('scroll', function() {
+            const header = document.querySelector('header');
+            if (window.scrollY > 100) {
+                header.style.padding = '10px 0';
+                header.style.background = 'rgba(26, 26, 46, 0.98)';
+            } else {
+                header.style.padding = '20px 0';
+                header.style.background = 'rgba(26, 26, 46, 0.95)';
+            }
+            
+            // Back to top button visibility
+            const backToTopBtn = document.querySelector('.scroll-to-top');
+            if (window.scrollY > 300) {
+                backToTopBtn.classList.add('active');
+            } else {
+                backToTopBtn.classList.remove('active');
+            }
+        });
+
+        // Back to top functionality
+        document.querySelector('.scroll-to-top').addEventListener('click', function() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+
+        // Mobile menu toggle
+        const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+        const nav = document.querySelector('nav');
+        
+        mobileMenuBtn.addEventListener('click', function() {
+            nav.classList.toggle('active');
+            if (nav.classList.contains('active')) {
+                mobileMenuBtn.innerHTML = '<i class="fas fa-times"></i>';
+            } else {
+                mobileMenuBtn.innerHTML = '<i class="fas fa-bars"></i>';
+            }
+        });
+
+        // Progress tracker animation
+        const progressSteps = document.querySelectorAll('.progress-step');
+        
+        const progressObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const stepNumber = parseInt(entry.target.querySelector('.step-circle').textContent);
+                    
+                    // Animate steps sequentially
+                    setTimeout(() => {
+                        entry.target.querySelector('.step-circle').classList.add('active');
+                    }, stepNumber * 200);
+                }
+            });
+        }, { threshold: 0.5 });
+        
+        progressSteps.forEach(step => {
+            progressObserver.observe(step);
+        });
+    </script>
+</body>
+</html>

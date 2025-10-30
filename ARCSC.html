@@ -1,0 +1,1291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ARCSCU Keynote Speech | Lakshan's Professional Skills Portfolio</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        :root {
+            --primary: #1a1a2e;
+            --secondary: #16213e;
+            --accent: #e94560;
+            --gold: #d4af37;
+            --light: #f0f0f0;
+            --text: #333333;
+            --success: #2ecc71;
+            --research-purple: #6c63ff;
+            --ai-blue: #4cc9f0;
+            --sustainability-green: #1abc9c;
+        }
+
+        body {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            color: var(--light);
+            line-height: 1.6;
+            scroll-behavior: smooth;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header Styles - Enhanced with sticky effect */
+        header {
+            padding: 20px 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background: rgba(22, 33, 62, 0.95);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+            transition: all 0.3s;
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 28px;
+            font-weight: 700;
+            color: var(--gold);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+        }
+
+        .logo i {
+            margin-right: 10px;
+            font-size: 32px;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+
+        nav ul li {
+            margin-left: 30px;
+        }
+
+        nav ul li a {
+            color: var(--light);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+            position: relative;
+        }
+
+        nav ul li a.active {
+            color: var(--gold);
+        }
+
+        nav ul li a.active::after {
+            width: 100%;
+        }
+
+        nav ul li a:hover {
+            color: var(--gold);
+        }
+
+        nav ul li a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -5px;
+            left: 0;
+            background-color: var(--gold);
+            transition: width 0.3s;
+        }
+
+        nav ul li a:hover::after {
+            width: 100%;
+        }
+
+        .menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            color: var(--light);
+            font-size: 24px;
+            cursor: pointer;
+        }
+
+        /* Back to Top Button */
+        .back-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 50px;
+            height: 50px;
+            background: var(--accent);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            font-size: 20px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+            transition: all 0.3s;
+            z-index: 999;
+            opacity: 0;
+            visibility: hidden;
+        }
+
+        .back-to-top.visible {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .back-to-top:hover {
+            background: var(--gold);
+            transform: translateY(-5px);
+        }
+
+        /* ARCSCU Hero Section - Enhanced */
+        .arcscu-hero {
+            padding: 150px 0 80px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            background-image: url('https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80');
+            background-size: cover;
+            background-position: center;
+            background-blend-mode: overlay;
+            background-color: rgba(26, 26, 46, 0.85);
+        }
+
+        .arcscu-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at center, rgba(108, 99, 255, 0.1) 0%, transparent 70%);
+            z-index: -1;
+        }
+
+        .arcscu-hero h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
+            font-weight: 700;
+            background: linear-gradient(45deg, var(--research-purple), #8a84ff);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: fadeInUp 1s ease-out;
+        }
+
+        .arcscu-hero p {
+            font-size: 20px;
+            max-width: 800px;
+            margin: 0 auto 30px;
+            color: #cccccc;
+            animation: fadeInUp 1s ease-out 0.2s both;
+        }
+
+        .quote-box {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 10px;
+            padding: 30px;
+            margin: 40px auto;
+            max-width: 700px;
+            border-left: 4px solid var(--research-purple);
+            font-style: italic;
+            animation: fadeInUp 1s ease-out 0.4s both;
+        }
+
+        .btn {
+            display: inline-block;
+            background: var(--accent);
+            color: white;
+            padding: 12px 30px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+            border: 2px solid var(--accent);
+            margin-top: 20px;
+            animation: fadeInUp 1s ease-out 0.6s both;
+        }
+
+        .btn:hover {
+            background: transparent;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .btn-outline {
+            background: transparent;
+            border: 2px solid var(--gold);
+            color: var(--gold);
+        }
+
+        .btn-outline:hover {
+            background: var(--gold);
+            color: var(--primary);
+        }
+
+        /* Content Sections */
+        .content-section {
+            padding: 80px 0;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 60px;
+            position: relative;
+        }
+
+        .section-title h2 {
+            font-size: 36px;
+            color: var(--research-purple);
+            margin-bottom: 15px;
+        }
+
+        .section-title p {
+            color: #cccccc;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            width: 80px;
+            height: 3px;
+            background: var(--accent);
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        /* Conference Overview Section - Enhanced */
+        .overview-section {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 15px;
+            padding: 40px;
+            margin: 40px 0;
+            backdrop-filter: blur(10px);
+            border-left: 5px solid var(--research-purple);
+        }
+
+        .overview-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 40px;
+            align-items: center;
+        }
+
+        .overview-text {
+            padding-right: 20px;
+        }
+
+        .conference-highlights {
+            background: rgba(108, 99, 255, 0.1);
+            border-radius: 10px;
+            padding: 25px;
+            border-left: 4px solid var(--research-purple);
+            transition: transform 0.3s;
+        }
+
+        .conference-highlights:hover {
+            transform: translateY(-5px);
+        }
+
+        .conference-highlights h3 {
+            color: var(--light);
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+        }
+
+        .conference-highlights h3 i {
+            margin-right: 10px;
+            color: var(--research-purple);
+        }
+
+        .conference-highlights ul {
+            list-style-type: none;
+        }
+
+        .conference-highlights li {
+            margin-bottom: 10px;
+            padding-left: 25px;
+            position: relative;
+        }
+
+        .conference-highlights li:before {
+            content: "•";
+            position: absolute;
+            left: 0;
+            color: var(--research-purple);
+            font-weight: bold;
+        }
+
+        /* Speaker Sections - Enhanced */
+        .speaker-section {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 15px;
+            padding: 40px;
+            margin: 50px 0;
+            backdrop-filter: blur(10px);
+            transition: transform 0.3s;
+        }
+
+        .speaker-section:hover {
+            transform: translateY(-5px);
+        }
+
+        .speaker-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 30px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .speaker-avatar {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            background: linear-gradient(45deg, var(--research-purple), var(--ai-blue));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 20px;
+            font-size: 2rem;
+            transition: transform 0.3s;
+        }
+
+        .speaker-avatar:hover {
+            transform: scale(1.1);
+        }
+
+        .speaker-info h3 {
+            color: var(--light);
+            margin-bottom: 5px;
+        }
+
+        .speaker-info p {
+            color: var(--research-purple);
+            font-weight: 500;
+        }
+
+        .speaker-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 30px;
+        }
+
+        .key-insights {
+            background: rgba(76, 201, 240, 0.1);
+            border-radius: 10px;
+            padding: 25px;
+            border-left: 4px solid var(--ai-blue);
+            transition: transform 0.3s;
+        }
+
+        .key-insights:hover {
+            transform: translateY(-5px);
+        }
+
+        .key-insights h4 {
+            color: var(--light);
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+        }
+
+        .key-insights h4 i {
+            margin-right: 10px;
+            color: var(--ai-blue);
+        }
+
+        .data-points {
+            background: rgba(26, 188, 156, 0.1);
+            border-radius: 10px;
+            padding: 25px;
+            border-left: 4px solid var(--sustainability-green);
+            transition: transform 0.3s;
+        }
+
+        .data-points:hover {
+            transform: translateY(-5px);
+        }
+
+        .data-points h4 {
+            color: var(--light);
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+        }
+
+        .data-points h4 i {
+            margin-right: 10px;
+            color: var(--sustainability-green);
+        }
+
+        .data-item {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 15px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            transition: transform 0.3s;
+        }
+
+        .data-item:hover {
+            transform: translateX(5px);
+        }
+
+        .data-value {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--sustainability-green);
+        }
+
+        .data-label {
+            color: #cccccc;
+            font-size: 0.9rem;
+        }
+
+        .quote-box {
+            background: rgba(108, 99, 255, 0.1);
+            padding: 20px;
+            border-radius: 8px;
+            margin-top: 20px;
+            border-left: 4px solid var(--research-purple);
+        }
+
+        .quote-box i {
+            color: var(--research-purple);
+            margin-right: 10px;
+        }
+
+        /* Key Takeaways Section - Enhanced */
+        .takeaways-section {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 15px;
+            padding: 40px;
+            margin: 50px 0;
+            backdrop-filter: blur(10px);
+        }
+
+        .takeaways-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .takeaway-card {
+            background: rgba(108, 99, 255, 0.1);
+            border-radius: 10px;
+            padding: 25px;
+            text-align: center;
+            border-left: 4px solid var(--research-purple);
+            transition: transform 0.3s;
+            backdrop-filter: blur(10px);
+        }
+
+        .takeaway-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .takeaway-icon {
+            font-size: 40px;
+            color: var(--research-purple);
+            margin-bottom: 15px;
+            transition: transform 0.3s;
+        }
+
+        .takeaway-card:hover .takeaway-icon {
+            transform: scale(1.2);
+        }
+
+        .takeaway-card h4 {
+            margin-bottom: 10px;
+            color: var(--light);
+        }
+
+        .takeaway-card p {
+            color: #cccccc;
+            font-size: 14px;
+        }
+
+        /* Personal Reflection Section - Enhanced */
+        .reflection-section {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 15px;
+            padding: 40px;
+            margin: 50px 0;
+            backdrop-filter: blur(10px);
+        }
+
+        .reflection-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 40px;
+            align-items: center;
+        }
+
+        .reflection-text {
+            padding-right: 20px;
+        }
+
+        .reflection-visual {
+            background: rgba(108, 99, 255, 0.1);
+            border-radius: 10px;
+            padding: 30px;
+            text-align: center;
+            transition: transform 0.3s;
+        }
+
+        .reflection-visual:hover {
+            transform: scale(1.02);
+        }
+
+        .reflection-visual i {
+            font-size: 4rem;
+            color: var(--research-purple);
+            margin-bottom: 20px;
+            transition: transform 0.5s;
+        }
+
+        .reflection-visual:hover i {
+            transform: rotate(10deg);
+        }
+
+        .key-learning-points {
+            background: rgba(76, 201, 240, 0.1);
+            border-radius: 10px;
+            padding: 25px;
+            margin-top: 30px;
+            transition: transform 0.3s;
+        }
+
+        .key-learning-points:hover {
+            transform: translateY(-5px);
+        }
+
+        .key-learning-points h4 {
+            color: var(--light);
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+        }
+
+        .key-learning-points h4 i {
+            margin-right: 10px;
+            color: var(--ai-blue);
+        }
+
+        .key-learning-points ul {
+            list-style-type: none;
+        }
+
+        .key-learning-points li {
+            margin-bottom: 10px;
+            padding-left: 25px;
+            position: relative;
+            transition: transform 0.3s;
+        }
+
+        .key-learning-points li:hover {
+            transform: translateX(5px);
+        }
+
+        .key-learning-points li:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: var(--sustainability-green);
+            font-weight: bold;
+        }
+
+        /* Expandable Sections */
+        .expandable-section {
+            margin-bottom: 20px;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        .expandable-header {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 15px 20px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: background 0.3s;
+        }
+
+        .expandable-header:hover {
+            background: rgba(255, 255, 255, 0.15);
+        }
+
+        .expandable-header h3 {
+            margin: 0;
+            color: var(--research-purple);
+        }
+
+        .expandable-content {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 0;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s, padding 0.3s;
+        }
+
+        .expandable-content.active {
+            padding: 20px;
+            max-height: 500px;
+        }
+
+        .expandable-content p {
+            margin-bottom: 15px;
+        }
+
+        .expandable-content ul {
+            padding-left: 20px;
+            margin-bottom: 15px;
+        }
+
+        .expandable-content li {
+            margin-bottom: 8px;
+        }
+
+        /* CTA Section */
+        .cta {
+            padding: 100px 0;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            text-align: center;
+        }
+
+        .cta h2 {
+            font-size: 36px;
+            margin-bottom: 20px;
+        }
+
+        .cta p {
+            font-size: 18px;
+            max-width: 700px;
+            margin: 0 auto 30px;
+        }
+
+        .btn-light {
+            background: transparent;
+            color: white;
+            border: 2px solid white;
+        }
+
+        .btn-light:hover {
+            background: white;
+            color: var(--primary);
+        }
+
+        /* Footer */
+        footer {
+            padding: 50px 0 30px;
+            text-align: center;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            margin-top: 50px;
+        }
+
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 30px;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 20px;
+        }
+
+        .social-links a {
+            color: var(--light);
+            font-size: 20px;
+            transition: color 0.3s;
+        }
+
+        .social-links a:hover {
+            color: var(--gold);
+        }
+
+        .copyright {
+            color: #999;
+            font-size: 14px;
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .header-content {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            nav ul {
+                display: none;
+                flex-direction: column;
+                width: 100%;
+                margin-top: 20px;
+            }
+
+            nav ul.show {
+                display: flex;
+            }
+
+            nav ul li {
+                margin: 10px 0;
+            }
+
+            .menu-toggle {
+                display: block;
+                position: absolute;
+                top: 20px;
+                right: 20px;
+            }
+
+            .arcscu-hero h1 {
+                font-size: 36px;
+            }
+
+            .overview-content {
+                grid-template-columns: 1fr;
+            }
+
+            .speaker-content {
+                grid-template-columns: 1fr;
+            }
+
+            .reflection-content {
+                grid-template-columns: 1fr;
+            }
+
+            .takeaways-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-content {
+                flex-direction: column;
+                gap: 20px;
+            }
+
+            .expandable-header {
+                padding: 12px 15px;
+            }
+
+            .expandable-header h3 {
+                font-size: 18px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header - Enhanced with sticky effect and mobile menu -->
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <a href="Portfolio.html" class="logo">
+                    <i class="fas fa-graduation-cap"></i> Lakshan K.P.B
+                </a>
+                <button class="menu-toggle" id="menuToggle">
+                    <i class="fas fa-bars"></i>
+                </button>
+                <nav>
+                    <ul id="navMenu">
+                        <li><a href="Portfolio.html">Home</a></li>
+                        <li><a href="Portfolio.html#skills">Skills</a></li>
+                        <li><a href="Portfolio.html#projects">Projects</a></li>
+                        <li><a href="Portfolio.html#contact">Contact</a></li>
+                        <li><a href="ARCSC.html" class="active">ARCSC Conference</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Back to Top Button -->
+    <a href="#" class="back-to-top" id="backToTop">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+
+    <!-- ARCSCU Hero Section - Enhanced -->
+    <section class="arcscu-hero">
+        <div class="container">
+            <h1>ARCSCU Research Conference</h1>
+            <p>Exploring AI, Sustainability, and Unconventional Computing through Expert Keynote Speeches</p>
+            
+            <div class="quote-box">
+                <p>"The conference highlighted how emerging technologies are addressing global challenges and shaping our future. It demonstrated that technological advancement and sustainability are not mutually exclusive but can be powerful allies."</p>
+            </div>
+            
+            <a href="#overview" class="btn">Explore Conference Insights</a>
+        </div>
+    </section>
+
+    <!-- Conference Overview Section - Enhanced -->
+    <section class="content-section" id="overview">
+        <div class="container">
+            <div class="section-title">
+                <h2>Conference Overview</h2>
+                <p>Three distinguished speakers exploring the intersection of technology, AI, and sustainability</p>
+            </div>
+            
+            <div class="overview-section">
+                <div class="overview-content">
+                    <div class="overview-text">
+                        <p>The ARCSCU Research Conference featured presentations from three distinguished experts exploring how cutting-edge technologies are addressing global challenges. The conference provided valuable insights into the intersection of artificial intelligence, sustainability, and unconventional computing methods.</p>
+                        <p>Each speaker brought a unique perspective on how technology can drive positive change while maintaining ethical considerations and environmental responsibility. The conference emphasized that the younger generation has both the opportunity and responsibility to leverage technology for positive impact.</p>
+                        <p>This experience provided me with a broader understanding of how my technical skills can be applied to solve real-world problems and contribute to sustainable development.</p>
+                    </div>
+                    
+                    <div class="conference-highlights">
+                        <h3><i class="fas fa-star"></i> Conference Highlights</h3>
+                        <ul>
+                            <li>AI applications in addressing global challenges</li>
+                            <li>Sustainable business models powered by technology</li>
+                            <li>Biological and unconventional computing approaches</li>
+                            <li>Real-world case studies and success stories</li>
+                            <li>Future directions in tech-driven sustainability</li>
+                            <li>The role of youth in shaping technological future</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Speaker 1 Section - Enhanced -->
+    <section class="content-section" style="background: rgba(0,0,0,0.2);">
+        <div class="container">
+            <div class="section-title">
+                <h2>Keynote Speaker 1: AI & Global Challenges</h2>
+                <p>Using AI and Technology to Confront Global Challenges</p>
+            </div>
+            
+            <div class="speaker-section">
+                <div class="speaker-header">
+                    <div class="speaker-avatar">
+                        <i class="fas fa-user-tie"></i>
+                    </div>
+                    <div class="speaker-info">
+                        <h3>Prof. Mahesha Kapurubandara</h3>
+                        <p>Pro Vice-Chancellor, SLIIT International</p>
+                    </div>
+                </div>
+                
+                <div class="speaker-content">
+                    <div class="key-insights">
+                        <h4><i class="fas fa-lightbulb"></i> Key Insights</h4>
+                        <ul>
+                            <li>The planet faces critical issues including climate disruption, inequality, resource depletion, and excessive waste</li>
+                            <li>The younger generation is uniquely positioned to make a difference through digital skills, innovation, and collaboration</li>
+                            <li>AI plays a key role in resolving complex problems across various sectors</li>
+                            <li>Technological solutions are already making significant impacts in Sri Lanka and neighboring regions</li>
+                            <li>There's no need to wait for tomorrow - we're already making a difference today</li>
+                        </ul>
+                        
+                        <div class="quote-box">
+                            <i class="fas fa-quote-left"></i>
+                            <p>"You don't need to wait for tomorrow—you're already making a difference today."</p>
+                        </div>
+                    </div>
+                    
+                    <div class="data-points">
+                        <h4><i class="fas fa-chart-bar"></i> Impact Data</h4>
+                        <div class="data-item">
+                            <div class="data-value">60%</div>
+                            <div class="data-label">of students expressed interest in careers merging AI and sustainability (2023 study)</div>
+                        </div>
+                        <div class="data-item">
+                            <div class="data-value">15%</div>
+                            <div class="data-label">rise in crop output in Sri Lankan agriculture due to AI (2024)</div>
+                        </div>
+                        <div class="data-item">
+                            <div class="data-value">20%</div>
+                            <div class="data-label">reduction in water usage through AI-guided irrigation systems</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Speaker 2 Section - Enhanced -->
+    <section class="content-section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Keynote Speaker 2: AI & Sustainable Business</h2>
+                <p>AI, Capitalism, and a Sustainable Future</p>
+            </div>
+            
+            <div class="speaker-section">
+                <div class="speaker-header">
+                    <div class="speaker-avatar">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <div class="speaker-info">
+                        <h3>Mr. Kalana Muthumuni</h3>
+                        <p>CEO and Co-Founder, Hyperglade</p>
+                    </div>
+                </div>
+                
+                <div class="speaker-content">
+                    <div class="key-insights">
+                        <h4><i class="fas fa-lightbulb"></i> Key Insights</h4>
+                        <ul>
+                            <li>AI has the power to align profit-making with environmental and social values</li>
+                            <li>Companies can be both profitable and responsible by adopting AI-led strategies</li>
+                            <li>Intelligent systems help minimize waste, reduce costs, and improve performance while meeting sustainability goals</li>
+                            <li>The traditional profit-first business model is shifting with the help of AI</li>
+                            <li>Success isn't about speed—it's about purpose and impact</li>
+                        </ul>
+                        
+                        <div class="quote-box">
+                            <i class="fas fa-quote-left"></i>
+                            <p>"Success isn't about speed—it's about purpose and impact."</p>
+                        </div>
+                    </div>
+                    
+                    <div class="data-points">
+                        <h4><i class="fas fa-briefcase"></i> Business Case Studies</h4>
+                        <div class="data-item">
+                            <div class="data-value" style="color: #e74c3c;">Bee Works</div>
+                            <div class="data-label">Despite billion-dollar valuation, failed due to financial mismanagement</div>
+                        </div>
+                        <div class="data-item">
+                            <div class="data-value" style="color: #2ecc71;">Delma</div>
+                            <div class="data-label">Contributes 15% of profits to support community initiatives</div>
+                        </div>
+                        <div class="data-item">
+                            <div class="data-value" style="color: #2ecc71;">Hyperglade</div>
+                            <div class="data-label">Successfully integrates AI with sustainable business practices</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Speaker 3 Section - Enhanced -->
+    <section class="content-section" style="background: rgba(0,0,0,0.2);">
+        <div class="container">
+            <div class="section-title">
+                <h2>Keynote Speaker 3: Unconventional Computing</h2>
+                <p>Innovations in Biological and Unconventional Computing</p>
+            </div>
+            
+            <div class="speaker-section">
+                <div class="speaker-header">
+                    <div class="speaker-avatar">
+                        <i class="fas fa-dna"></i>
+                    </div>
+                    <div class="speaker-info">
+                        <h3>Dr. Edward Braund</h3>
+                        <p>Head of Computer Science, University of Bedfordshire</p>
+                    </div>
+                </div>
+                
+                <div class="speaker-content">
+                    <div class="key-insights">
+                        <h4><i class="fas fa-lightbulb"></i> Key Insights</h4>
+                        <ul>
+                            <li>Unconventional computing explores alternative methods beyond classic systems, using organic and chemical models</li>
+                            <li>Biological systems have the ability to adapt, heal, and sustain themselves—making them ideal for future computing needs</li>
+                            <li>Early lab experiments have shown promising functionality and potential for real-world use</li>
+                            <li>These ideas are evolving from theory into application</li>
+                            <li>Nature-based computing is paving a path to more efficient and eco-friendly technology</li>
+                        </ul>
+                        
+                        <div class="quote-box">
+                            <i class="fas fa-quote-left"></i>
+                            <p>"Nature-based computing is paving a path to more efficient and eco-friendly technology."</p>
+                        </div>
+                    </div>
+                    
+                    <div class="data-points">
+                        <h4><i class="fas fa-flask"></i> Research Highlights</h4>
+                        <div class="data-item">
+                            <div class="data-value">Physarum Polycephalum</div>
+                            <div class="data-label">Slime mold that can solve complex tasks by mimicking intelligence</div>
+                        </div>
+                        <div class="data-item">
+                            <div class="data-value">Organic Integration</div>
+                            <div class="data-label">Integration of sensors and actuators into organic systems boosts processing capabilities</div>
+                        </div>
+                        <div class="data-item">
+                            <div class="data-value">Musical Encoding</div>
+                            <div class="data-label">Encoding musical notes using voltage patterns—a step toward unconventional data processing</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Key Takeaways Section - Enhanced -->
+    <section class="content-section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Key Takeaways</h2>
+                <p>Main insights from the ARCSCU Research Conference</p>
+            </div>
+            
+            <div class="takeaways-section">
+                <div class="takeaways-grid">
+                    <div class="takeaway-card">
+                        <div class="takeaway-icon">
+                            <i class="fas fa-robot"></i>
+                        </div>
+                        <h4>Versatile Role of AI</h4>
+                        <p>The conference demonstrated how AI is influencing everything from social justice to business and science, showing its potential across diverse domains.</p>
+                    </div>
+                    
+                    <div class="takeaway-card">
+                        <div class="takeaway-icon">
+                            <i class="fas fa-leaf"></i>
+                        </div>
+                        <h4>Sustainability with Progress</h4>
+                        <p>Advancements in technology are not a threat to the environment—they can enhance sustainability when applied thoughtfully.</p>
+                    </div>
+                    
+                    <div class="takeaway-card">
+                        <div class="takeaway-icon">
+                            <i class="fas fa-microchip"></i>
+                        </div>
+                        <h4>Next-Gen Computing</h4>
+                        <p>We are stepping beyond traditional computing into innovative fields like biological systems, opening new possibilities for sustainable technology.</p>
+                    </div>
+                    
+                    <div class="takeaway-card">
+                        <div class="takeaway-icon">
+                            <i class="fas fa-users"></i>
+                        </div>
+                        <h4>Youth Responsibility</h4>
+                        <p>The younger generation has a crucial role to play in shaping technology's ethical and sustainable application for future generations.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Personal Reflection Section - Enhanced -->
+    <section class="content-section" style="background: rgba(0,0,0,0.2);">
+        <div class="container">
+            <div class="section-title">
+                <h2>Personal Reflection</h2>
+                <p>How the ARCSCU Conference influenced my professional perspective</p>
+            </div>
+            
+            <div class="reflection-section">
+                <div class="reflection-content">
+                    <div class="reflection-text">
+                        <p>Attending the ARCSCU Research Conference was a transformative experience that significantly broadened my understanding of technology's role in addressing global challenges. Before the conference, I primarily viewed AI and computing through a technical lens focused on efficiency and capability.</p>
+                        <p>The presentations helped me recognize that technological advancement and sustainability are not mutually exclusive but can be powerful allies. I was particularly fascinated by the concept of biological computing, which represents a paradigm shift in how we think about information processing.</p>
+                        <p>This conference emphasized that as future IT professionals, we have both the opportunity and responsibility to leverage technology for positive impact. It inspired me to consider how my technical skills can contribute to solving pressing global issues rather than just commercial applications.</p>
+                    </div>
+                    
+                    <div class="reflection-visual">
+                        <i class="fas fa-brain"></i>
+                        <h3>Expanded Perspective</h3>
+                        <p>The conference shifted my focus from purely technical considerations to broader societal impacts</p>
+                    </div>
+                </div>
+                
+                <div class="key-learning-points">
+                    <h4><i class="fas fa-graduation-cap"></i> Key Learning Points</h4>
+                    <ul>
+                        <li>AI applications extend far beyond commercial uses to address critical global challenges</li>
+                        <li>Business models are evolving to incorporate sustainability as a core value rather than an afterthought</li>
+                        <li>Unconventional computing approaches may offer more sustainable alternatives to traditional silicon-based systems</li>
+                        <li>Technology should be developed with ethical considerations and environmental impact in mind</li>
+                        <li>Collaboration between technologists, environmentalists, and policymakers is essential for meaningful progress</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Expandable Section for Additional Resources -->
+    <section class="content-section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Additional Resources</h2>
+                <p>Further exploration of conference topics</p>
+            </div>
+            
+            <div class="expandable-section">
+                <div class="expandable-header" onclick="toggleExpandable(this)">
+                    <h3>Recommended Readings & Resources</h3>
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="expandable-content">
+                    <p>For those interested in exploring these topics further, here are some recommended resources:</p>
+                    <ul>
+                        <li><strong>AI for Sustainability:</strong> "AI for Good: Applications in Sustainable Development" by leading researchers in the field</li>
+                        <li><strong>Biological Computing:</strong> "Nature's Algorithms: The Future of Bio-Inspired Computing" journal publications</li>
+                        <li><strong>Sustainable Business:</strong> "The Green Tech Revolution: How AI is Transforming Business Models" case studies</li>
+                        <li><strong>Ethical AI:</strong> "Responsible AI: Frameworks for Ethical Technology Development" industry guidelines</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta">
+        <div class="container">
+            <h2>Interested in Emerging Technologies?</h2>
+            <p>I've gained valuable insights into AI, sustainability, and unconventional computing through the ARCSCU conference and can apply these perspectives to technology projects and research.</p>
+            <a href="Portfolio.html#contact" class="btn btn-light">Get In Touch</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="logo">
+                    <i class="fas fa-graduation-cap"></i> Lakshan K.P.B
+                </div>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-github"></i></a>
+                    <a href="#"><i class="fas fa-envelope"></i></a>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2025 Lakshan K.P.B - Professional Skills Portfolio. All Rights Reserved. | SLIIT City Uni.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        const menuToggle = document.getElementById('menuToggle');
+        const navMenu = document.getElementById('navMenu');
+        
+        menuToggle.addEventListener('click', () => {
+            navMenu.classList.toggle('show');
+        });
+
+        // Header scroll effect
+        window.addEventListener('scroll', function() {
+            const header = document.querySelector('header');
+            if (window.scrollY > 100) {
+                header.style.padding = '10px 0';
+                header.style.background = 'rgba(26, 26, 46, 0.98)';
+            } else {
+                header.style.padding = '20px 0';
+                header.style.background = 'rgba(26, 26, 46, 0.95)';
+            }
+            
+            // Back to top button visibility
+            const backToTopBtn = document.querySelector('.back-to-top');
+            if (window.scrollY > 300) {
+                backToTopBtn.classList.add('visible');
+            } else {
+                backToTopBtn.classList.remove('visible');
+            }
+        });
+
+        // Back to top functionality
+        document.querySelector('.back-to-top').addEventListener('click', function() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+
+        // Expandable sections
+        function toggleExpandable(header) {
+            const content = header.nextElementSibling;
+            const icon = header.querySelector('i');
+            
+            content.classList.toggle('active');
+            
+            if (content.classList.contains('active')) {
+                icon.classList.remove('fa-chevron-down');
+                icon.classList.add('fa-chevron-up');
+            } else {
+                icon.classList.remove('fa-chevron-up');
+                icon.classList.add('fa-chevron-down');
+            }
+        }
+
+        // Add animation to elements on scroll
+        const animatedElements = document.querySelectorAll('.takeaway-card, .speaker-section, .data-item, .reflection-visual, .conference-highlights');
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if(entry.isIntersecting) {
+                    entry.target.style.opacity = 1;
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, { threshold: 0.1 });
+        
+        animatedElements.forEach(element => {
+            element.style.opacity = 0;
+            element.style.transform = 'translateY(20px)';
+            element.style.transition = 'opacity 0.5s, transform 0.5s';
+            observer.observe(element);
+        });
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if(targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if(targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                    
+                    // Close mobile menu if open
+                    if (navMenu.classList.contains('show')) {
+                        navMenu.classList.remove('show');
+                    }
+                }
+            });
+        });
+    </script>
+</body>
+</html>

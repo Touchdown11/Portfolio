@@ -1,0 +1,1358 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chandarapala Food Stall | Lakshan's Professional Skills Portfolio</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        :root {
+            --primary: #2c1a1d;
+            --secondary: #4a2c2a;
+            --accent: #e94560;
+            --gold: #d4af37;
+            --light: #f8f5f2;
+            --text: #333333;
+            --success: #4caf50;
+            --warning: #ff9800;
+            --shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+            --transition: all 0.3s ease;
+        }
+
+        body {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            color: var(--light);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header Styles - Improved with fixed positioning */
+        header {
+            padding: 15px 0;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            background: rgba(44, 26, 29, 0.95);
+            backdrop-filter: blur(10px);
+            transition: var(--transition);
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        header.scrolled {
+            padding: 10px 0;
+            background: rgba(44, 26, 29, 0.98);
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 28px;
+            font-weight: 700;
+            color: var(--gold);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            transition: var(--transition);
+        }
+
+        .logo:hover {
+            transform: translateY(-2px);
+        }
+
+        .logo i {
+            margin-right: 10px;
+            font-size: 32px;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+
+        nav ul li {
+            margin-left: 30px;
+        }
+
+        nav ul li a {
+            color: var(--light);
+            text-decoration: none;
+            font-weight: 500;
+            transition: var(--transition);
+            position: relative;
+            padding: 5px 0;
+        }
+
+        nav ul li a:hover,
+        nav ul li a.active {
+            color: var(--gold);
+        }
+
+        nav ul li a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: 0;
+            left: 0;
+            background-color: var(--gold);
+            transition: var(--transition);
+        }
+
+        nav ul li a:hover::after,
+        nav ul li a.active::after {
+            width: 100%;
+        }
+
+        /* Hero Section - Enhanced */
+        .hero {
+            background: linear-gradient(rgba(60, 42, 30, 0.85), rgba(60, 42, 30, 0.9)), url('https://images.unsplash.com/photo-1504674900247-0877df9cc836?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            color: white;
+            padding: 180px 0 120px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="100" height="100" opacity="0.1"><path fill="white" d="M50,0 L100,50 L50,100 L0,50 Z"/></svg>');
+            background-size: 100px;
+            opacity: 0.1;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            animation: fadeInUp 1s ease;
+        }
+
+        .hero-logo {
+            font-size: 5rem;
+            margin-bottom: 20px;
+            color: var(--gold);
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+            animation: bounce 2s infinite;
+        }
+
+        h1 {
+            font-size: 4rem;
+            margin-bottom: 20px;
+            font-weight: 700;
+            text-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+        }
+
+        .subtitle {
+            font-size: 1.5rem;
+            max-width: 800px;
+            margin: 0 auto 30px;
+            font-weight: 300;
+        }
+
+        .btn {
+            display: inline-block;
+            background: var(--gold);
+            color: var(--primary);
+            padding: 15px 40px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: var(--transition);
+            box-shadow: var(--shadow);
+            border: 2px solid transparent;
+            font-size: 1.1rem;
+        }
+
+        .btn:hover {
+            background: transparent;
+            color: var(--gold);
+            border-color: var(--gold);
+            transform: translateY(-5px);
+            box-shadow: 0 15px 25px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Section Styles */
+        section {
+            padding: 100px 0;
+            position: relative;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 60px;
+            position: relative;
+        }
+
+        .section-title h2 {
+            font-size: 2.8rem;
+            color: var(--gold);
+            display: inline-block;
+            padding-bottom: 15px;
+            position: relative;
+        }
+
+        .section-title h2::after {
+            content: '';
+            position: absolute;
+            width: 100px;
+            height: 4px;
+            background: var(--accent);
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            border-radius: 2px;
+        }
+
+        .section-title p {
+            max-width: 700px;
+            margin: 20px auto 0;
+            color: rgba(255, 255, 255, 0.8);
+            font-size: 1.1rem;
+        }
+
+        /* About Section */
+        #about {
+            background-color: rgba(255, 255, 255, 0.05);
+        }
+
+        .about-content {
+            display: flex;
+            align-items: center;
+            gap: 50px;
+        }
+
+        .about-text {
+            flex: 1;
+        }
+
+        .about-text p {
+            margin-bottom: 20px;
+            font-size: 1.1rem;
+            line-height: 1.8;
+        }
+
+        .about-image {
+            flex: 1;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            position: relative;
+        }
+
+        .about-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+            transition: transform 0.8s ease;
+        }
+
+        .about-image:hover img {
+            transform: scale(1.05);
+        }
+
+        .about-image::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(45deg, rgba(212, 175, 55, 0.2), rgba(233, 69, 96, 0.2));
+            opacity: 0;
+            transition: var(--transition);
+        }
+
+        .about-image:hover::after {
+            opacity: 1;
+        }
+
+        /* Stats Section */
+        .stats {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            margin: 50px 0;
+            gap: 20px;
+        }
+
+        .stat-item {
+            text-align: center;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 10px;
+            flex: 1;
+            min-width: 200px;
+            transition: var(--transition);
+        }
+
+        .stat-item:hover {
+            transform: translateY(-10px);
+            background: rgba(255, 255, 255, 0.1);
+        }
+
+        .stat-number {
+            font-size: 3rem;
+            font-weight: 700;
+            color: var(--gold);
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        .stat-label {
+            font-size: 1.1rem;
+            color: rgba(255, 255, 255, 0.8);
+        }
+
+        /* Menu Section */
+        #menu {
+            background: rgba(0, 0, 0, 0.2);
+        }
+
+        .menu-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 30px;
+        }
+
+        .menu-item {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            position: relative;
+        }
+
+        .menu-item:hover {
+            transform: translateY(-15px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+        }
+
+        .menu-img {
+            height: 200px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .menu-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.8s ease;
+        }
+
+        .menu-item:hover .menu-img img {
+            transform: scale(1.2);
+        }
+
+        .menu-price {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background: var(--gold);
+            color: var(--primary);
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-weight: 600;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .menu-details {
+            padding: 25px;
+        }
+
+        .menu-details h3 {
+            color: var(--gold);
+            margin-bottom: 10px;
+            font-size: 1.4rem;
+        }
+
+        .menu-details p {
+            color: rgba(255, 255, 255, 0.8);
+            margin-bottom: 15px;
+        }
+
+        .menu-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 5px;
+        }
+
+        .menu-tag {
+            background: rgba(233, 69, 96, 0.2);
+            color: var(--accent);
+            padding: 3px 10px;
+            border-radius: 15px;
+            font-size: 0.8rem;
+        }
+
+        /* Timeline Section */
+        #timeline {
+            background-color: rgba(255, 255, 255, 0.05);
+        }
+
+        .timeline {
+            position: relative;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            top: 0;
+            bottom: 0;
+            width: 4px;
+            background: var(--gold);
+            transform: translateX(-50%);
+            border-radius: 2px;
+        }
+
+        .timeline-item {
+            margin-bottom: 60px;
+            position: relative;
+            width: 50%;
+            padding-right: 40px;
+            opacity: 0;
+            transform: translateY(30px);
+            transition: var(--transition);
+        }
+
+        .timeline-item.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .timeline-item:nth-child(even) {
+            margin-left: 50%;
+            padding-left: 40px;
+            padding-right: 0;
+        }
+
+        .timeline-content {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 25px;
+            border-radius: 15px;
+            box-shadow: var(--shadow);
+            position: relative;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: var(--transition);
+        }
+
+        .timeline-content:hover {
+            transform: scale(1.02);
+            background: rgba(255, 255, 255, 0.08);
+        }
+
+        .timeline-item:nth-child(odd) .timeline-content::after {
+            content: '';
+            position: absolute;
+            right: -10px;
+            top: 30px;
+            width: 0;
+            height: 0;
+            border-top: 10px solid transparent;
+            border-bottom: 10px solid transparent;
+            border-left: 10px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .timeline-item:nth-child(even) .timeline-content::after {
+            content: '';
+            position: absolute;
+            left: -10px;
+            top: 30px;
+            width: 0;
+            height: 0;
+            border-top: 10px solid transparent;
+            border-bottom: 10px solid transparent;
+            border-right: 10px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .timeline-date {
+            font-weight: bold;
+            color: var(--accent);
+            margin-bottom: 10px;
+            font-size: 1.1rem;
+        }
+
+        .timeline-content h3 {
+            color: var(--gold);
+            margin-bottom: 15px;
+            font-size: 1.3rem;
+        }
+
+        .timeline-marker {
+            position: absolute;
+            top: 30px;
+            right: -20px;
+            width: 40px;
+            height: 40px;
+            background: var(--gold);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--primary);
+            font-size: 1.2rem;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            z-index: 10;
+        }
+
+        .timeline-item:nth-child(even) .timeline-marker {
+            left: -20px;
+            right: auto;
+        }
+
+        /* Lessons Section */
+        #lessons {
+            background: rgba(0, 0, 0, 0.2);
+        }
+
+        .lessons-container {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .lesson-card {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 15px;
+            padding: 30px;
+            margin-bottom: 30px;
+            box-shadow: var(--shadow);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: var(--transition);
+        }
+
+        .lesson-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        .lesson-card h3 {
+            color: var(--gold);
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            font-size: 1.4rem;
+        }
+
+        .lesson-card h3 i {
+            margin-right: 15px;
+            color: var(--accent);
+            font-size: 1.5rem;
+        }
+
+        .lesson-card ul {
+            list-style-type: none;
+        }
+
+        .lesson-card li {
+            margin-bottom: 12px;
+            padding-left: 25px;
+            position: relative;
+            line-height: 1.6;
+        }
+
+        .lesson-card li::before {
+            content: '•';
+            color: var(--accent);
+            font-weight: bold;
+            position: absolute;
+            left: 0;
+            font-size: 1.2rem;
+        }
+
+        .lesson-card strong {
+            color: var(--gold);
+        }
+
+        /* Gallery Section */
+        #gallery {
+            background-color: rgba(255, 255, 255, 0.05);
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 20px;
+        }
+
+        .gallery-item {
+            border-radius: 15px;
+            overflow: hidden;
+            height: 250px;
+            position: relative;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .gallery-item:hover {
+            transform: scale(1.03);
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.8s ease;
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.1);
+        }
+
+        .gallery-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(26, 26, 46, 0.7);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transition: var(--transition);
+        }
+
+        .gallery-item:hover .gallery-overlay {
+            opacity: 1;
+        }
+
+        /* Lightbox */
+        .lightbox {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.9);
+            z-index: 2000;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .lightbox-content {
+            max-width: 90%;
+            max-height: 90%;
+            position: relative;
+        }
+
+        .lightbox-content img {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
+        }
+
+        .close-lightbox {
+            position: absolute;
+            top: -40px;
+            right: 0;
+            color: white;
+            font-size: 2rem;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .close-lightbox:hover {
+            color: var(--accent);
+        }
+
+        /* Footer */
+        footer {
+            padding: 70px 0 30px;
+            text-align: center;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            margin-top: 50px;
+            background: rgba(0, 0, 0, 0.2);
+        }
+
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 30px;
+            flex-wrap: wrap;
+            gap: 30px;
+        }
+
+        .footer-logo {
+            font-size: 28px;
+            font-weight: 700;
+            color: var(--gold);
+            display: flex;
+            align-items: center;
+        }
+
+        .footer-logo i {
+            margin-right: 10px;
+            font-size: 32px;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 20px;
+        }
+
+        .social-links a {
+            color: var(--light);
+            font-size: 20px;
+            transition: var(--transition);
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(255, 255, 255, 0.1);
+        }
+
+        .social-links a:hover {
+            color: var(--gold);
+            transform: translateY(-5px);
+            background: rgba(255, 255, 255, 0.2);
+        }
+
+        .copyright {
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 14px;
+            margin-top: 20px;
+        }
+
+        /* Back to Top Button */
+        .back-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 50px;
+            height: 50px;
+            background: var(--gold);
+            color: var(--primary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+            cursor: pointer;
+            opacity: 0;
+            visibility: hidden;
+            transition: var(--transition);
+            z-index: 100;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .back-to-top.show {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .back-to-top:hover {
+            background: var(--accent);
+            color: white;
+            transform: translateY(-5px);
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% {
+                transform: translateY(0);
+            }
+            40% {
+                transform: translateY(-10px);
+            }
+            60% {
+                transform: translateY(-5px);
+            }
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .header-content {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            nav ul {
+                margin-top: 20px;
+                justify-content: center;
+                flex-wrap: wrap;
+            }
+
+            nav ul li {
+                margin: 10px 15px;
+            }
+
+            .hero {
+                padding: 150px 0 80px;
+            }
+
+            .hero-logo {
+                font-size: 3.5rem;
+            }
+
+            h1 {
+                font-size: 2.5rem;
+            }
+
+            .subtitle {
+                font-size: 1.2rem;
+            }
+
+            .about-content {
+                flex-direction: column;
+            }
+            
+            .timeline::before {
+                left: 20px;
+            }
+            
+            .timeline-item {
+                width: 100%;
+                padding-left: 50px;
+                padding-right: 0;
+            }
+            
+            .timeline-item:nth-child(even) {
+                margin-left: 0;
+                padding-left: 50px;
+            }
+            
+            .timeline-item:nth-child(odd) .timeline-content::after {
+                left: -10px;
+                right: auto;
+                border-left: none;
+                border-right: 10px solid rgba(255, 255, 255, 0.05);
+            }
+
+            .timeline-marker {
+                left: 10px !important;
+                right: auto !important;
+            }
+
+            .footer-content {
+                flex-direction: column;
+                gap: 20px;
+            }
+
+            .quick-nav {
+                display: none;
+            }
+
+            .back-to-top {
+                bottom: 20px;
+                right: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header id="header">
+        <div class="container">
+            <div class="header-content">
+                <a href="Portfolio.html" class="logo">
+                    <i class="fas fa-graduation-cap"></i> Lakshan K.P.B
+                </a>
+                <nav>
+                    <ul>
+                        <li><a href="Portfolio.html">Home</a></li>
+                        <li><a href="Portfolio.html#skills">Skills</a></li>
+                        <li><a href="Portfolio.html#projects">Projects</a></li>
+                        <li><a href="Portfolio.html#contact">Contact</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-logo">
+                    <i class="fas fa-utensils"></i>
+                </div>
+                <h1>Chandarapala Food Stall</h1>
+                <p class="subtitle">A culinary journey at the Food Festival - blending flavors, teamwork, and entrepreneurial spirit</p>
+                <a href="#about" class="btn">Explore Our Journey</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about">
+        <div class="container">
+            <div class="section-title">
+                <h2>About Our Project</h2>
+                <p>Discover the story behind our successful food stall at the university festival</p>
+            </div>
+            <div class="about-content">
+                <div class="about-text">
+                    <p>As part of our Professional Skills module, we participated in the Food Festival by managing our stall, <strong>Chandarapala</strong>. The main objective of this event was to enhance our teamwork, communication, problem-solving, and entrepreneurial skills while offering attendees a memorable food experience.</p>
+                    <p>Our stall featured a diverse menu that included both savory and sweet options, carefully chosen to appeal to a wide range of customers. The experience allowed our group to practice and strengthen skills such as time management, financial planning, coordination, marketing, and customer service.</p>
+                    <p>Overall, managing the stall gave us not only the opportunity to engage directly with customers but also valuable hands-on experience in running a business-like setup. It was a successful and rewarding learning experience for all group members.</p>
+                </div>
+                <div class="about-image">
+                    <img src="Food Festival.jpg" alt="Food Stall Setup">
+                </div>
+            </div>
+            
+            <div class="stats">
+                <div class="stat-item">
+                    <span class="stat-number">8</span>
+                    <span class="stat-label">Menu Items</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">10</span>
+                    <span class="stat-label">Team Members</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">100+</span>
+                    <span class="stat-label">Customers Served</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">1</span>
+                    <span class="stat-label">Successful Event</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Menu Section -->
+    <section id="menu">
+        <div class="container">
+            <div class="section-title">
+                <h2>Our Menu</h2>
+                <p>A delicious selection of dishes that delighted our customers</p>
+            </div>
+            <div class="menu-grid">
+                <div class="menu-item">
+                    <div class="menu-img">
+                        <img src="https://images.unsplash.com/photo-1551892374-ecf8754cf8b0?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Spaghetti">
+                        <div class="menu-price">Rs. 350</div>
+                    </div>
+                    <div class="menu-details">
+                        <h3>Spaghetti</h3>
+                        <p>Delicious pasta with rich tomato sauce and herbs</p>
+                        <div class="menu-tags">
+                            <span class="menu-tag">Italian</span>
+                            <span class="menu-tag">Vegetarian</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="menu-item">
+                    <div class="menu-img">
+                        <img src="https://images.unsplash.com/photo-1563729784474-d77dbb933a9e?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Watalappan">
+                        <div class="menu-price">Rs. 200</div>
+                    </div>
+                    <div class="menu-details">
+                        <h3>Watalappan</h3>
+                        <p>Traditional Sri Lankan coconut custard pudding</p>
+                        <div class="menu-tags">
+                            <span class="menu-tag">Dessert</span>
+                            <span class="menu-tag">Sri Lankan</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="menu-item">
+                    <div class="menu-img">
+                        <img src="https://images.unsplash.com/photo-1517701604599-bb29b565090c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Iced Coffee">
+                        <div class="menu-price">Rs. 250</div>
+                    </div>
+                    <div class="menu-details">
+                        <h3>Iced Coffee</h3>
+                        <p>Refreshing cold coffee with cream and sweetness</p>
+                        <div class="menu-tags">
+                            <span class="menu-tag">Beverage</span>
+                            <span class="menu-tag">Cold</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="menu-item">
+                    <div class="menu-img">
+                        <img src="https://images.unsplash.com/photo-1513558161293-cdaf765ed2fd?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Mojito">
+                        <div class="menu-price">Rs. 200</div>
+                    </div>
+                    <div class="menu-details">
+                        <h3>Mojito</h3>
+                        <p>Fresh mint and lime mocktail beverage</p>
+                        <div class="menu-tags">
+                            <span class="menu-tag">Beverage</span>
+                            <span class="menu-tag">Refreshing</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="menu-item">
+                    <div class="menu-img">
+                        <img src="https://images.unsplash.com/photo-1562376552-0d160a2f238d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Waffles">
+                        <div class="menu-price">Rs. 300</div>
+                    </div>
+                    <div class="menu-details">
+                        <h3>Waffles</h3>
+                        <p>Crispy golden waffles with syrup and toppings</p>
+                        <div class="menu-tags">
+                            <span class="menu-tag">Dessert</span>
+                            <span class="menu-tag">Breakfast</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="menu-item">
+                    <div class="menu-img">
+                        <img src="https://images.unsplash.com/photo-1578985545062-69928b1d9587?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Cake">
+                        <div class="menu-price">Rs. 150</div>
+                    </div>
+                    <div class="menu-details">
+                        <h3>Cake</h3>
+                        <p>Delicious homemade cake with beautiful decoration</p>
+                        <div class="menu-tags">
+                            <span class="menu-tag">Dessert</span>
+                            <span class="menu-tag">Sweet</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="menu-item">
+                    <div class="menu-img">
+                        <img src="https://images.unsplash.com/photo-1546069901-ba9599a7e63c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Fruit Kebab">
+                        <div class="menu-price">Rs. 180</div>
+                    </div>
+                    <div class="menu-details">
+                        <h3>Fruit Kebab</h3>
+                        <p>Fresh fruit skewers with a sweet dip</p>
+                        <div class="menu-tags">
+                            <span class="menu-tag">Healthy</span>
+                            <span class="menu-tag">Fruit</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="menu-item">
+                    <div class="menu-img">
+                        <img src="https://images.unsplash.com/photo-1598214886806-c87b84b7078b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Sausage Kebab">
+                        <div class="menu-price">Rs. 220</div>
+                    </div>
+                    <div class="menu-details">
+                        <h3>Sausage Kebab</h3>
+                        <p>Grilled sausage skewers with flavorful seasoning</p>
+                        <div class="menu-tags">
+                            <span class="menu-tag">Savory</span>
+                            <span class="menu-tag">Grilled</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Timeline Section -->
+    <section id="timeline">
+        <div class="container">
+            <div class="section-title">
+                <h2>Project Timeline</h2>
+                <p>Our journey from planning to execution</p>
+            </div>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-marker">
+                        <i class="fas fa-calendar-alt"></i>
+                    </div>
+                    <div class="timeline-content">
+                        <div class="timeline-date">3 Weeks Before</div>
+                        <h3>Planning Phase</h3>
+                        <p>Initial meeting to discuss theme, menu, and roles. Task allotment to team members and menu finalization.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-marker">
+                        <i class="fas fa-clipboard-list"></i>
+                    </div>
+                    <div class="timeline-content">
+                        <div class="timeline-date">2 Weeks Before</div>
+                        <h3>Preparation Begins</h3>
+                        <p>Budget was drawn up, and procurement list created. Weekly check-ins for progress updates.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-marker">
+                        <i class="fas fa-shopping-cart"></i>
+                    </div>
+                    <div class="timeline-content">
+                        <div class="timeline-date">1 Week Before</div>
+                        <h3>Procurement & Decoration</h3>
+                        <p>Purchased all needed items. Decoration team gathered materials. Cake and Watalappam prepared in advance.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-marker">
+                        <i class="fas fa-utensils"></i>
+                    </div>
+                    <div class="timeline-content">
+                        <div class="timeline-date">Event Day - 8:00 AM</div>
+                        <h3>Food Preparation</h3>
+                        <p>Team prepared all food items. Decoration team completed stall setup.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-marker">
+                        <i class="fas fa-store"></i>
+                    </div>
+                    <div class="timeline-content">
+                        <div class="timeline-date">Event Day - 12:00 PM</div>
+                        <h3>Stall Opening</h3>
+                        <p>Marketing team promoted the stall. Sales, cashier, and preparation teams worked in coordination.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Lessons Section -->
+    <section id="lessons">
+        <div class="container">
+            <div class="section-title">
+                <h2>Challenges & Lessons Learned</h2>
+                <p>Reflections on our journey and insights for future projects</p>
+            </div>
+            <div class="lessons-container">
+                <div class="lesson-card">
+                    <h3><i class="fas fa-exclamation-triangle"></i> Challenges Faced</h3>
+                    <ul>
+                        <li><strong>Workspace Limitations:</strong> Limited space and equipment made food preparation tiring.</li>
+                        <li><strong>Financial Loss:</strong> Incurred a loss due to preparing too many food items with large investment.</li>
+                        <li><strong>Shortage of Supplies:</strong> Ran out of ice midway, requiring last-minute purchase.</li>
+                        <li><strong>Time Management:</strong> Preparing many varieties took more time than expected.</li>
+                        <li><strong>Selling Difficulties:</strong> Some items didn't sell well due to low customer interest and competition.</li>
+                    </ul>
+                </div>
+                <div class="lesson-card">
+                    <h3><i class="fas fa-graduation-cap"></i> Lessons Learned</h3>
+                    <ul>
+                        <li>Limit the menu to high-demand items and practice careful budgeting.</li>
+                        <li>Better planning, smaller menu, and clearer task allocation save time and improve productivity.</li>
+                        <li>Successful sales require strong marketing, attractive presentation, and customer engagement.</li>
+                        <li>Choose items that match customer preferences to maximize sales.</li>
+                        <li>Teamwork and communication are crucial for overcoming unexpected challenges.</li>
+                    </ul>
+                </div>
+                <div class="lesson-card">
+                    <h3><i class="fas fa-lightbulb"></i> Recommendations for Future</h3>
+                    <ul>
+                        <li>Allocate more time for food preparation to avoid last-minute shortages.</li>
+                        <li>Ensure sufficient change is available before the event.</li>
+                        <li>Finalize and organize decoration plans several days in advance.</li>
+                        <li>Create a clear crowd management plan.</li>
+                        <li>Establish a detailed task division plan for the event day.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section id="gallery">
+        <div class="container">
+            <div class="section-title">
+                <h2>Gallery</h2>
+                <p>Memorable moments from our food stall experience</p>
+            </div>
+            <div class="gallery-grid">
+                <div class="gallery-item">
+                    <img src="Food Festival.jpg" alt="Food Stall">
+                    <div class="gallery-overlay">
+                        <i class="fas fa-search-plus fa-2x"></i>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="#" alt="Food Preparation">
+                    <div class="gallery-overlay">
+                        <i class="fas fa-search-plus fa-2x"></i>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="#" alt="Food Display">
+                    <div class="gallery-overlay">
+                        <i class="fas fa-search-plus fa-2x"></i>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="#" alt="Team Work">
+                    <div class="gallery-overlay">
+                        <i class="fas fa-search-plus fa-2x"></i>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="#" alt="Cooking">
+                    <div class="gallery-overlay">
+                        <i class="fas fa-search-plus fa-2x"></i>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="#" alt="Food Service">
+                    <div class="gallery-overlay">
+                        <i class="fas fa-search-plus fa-2x"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Lightbox -->
+    <div class="lightbox" id="lightbox">
+        <div class="lightbox-content">
+            <span class="close-lightbox">&times;</span>
+            <img src="" alt="" id="lightbox-img">
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <i class="fas fa-graduation-cap"></i> Lakshan K.P.B
+                </div>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                    <a href="#"><i class="fab fa-github"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+            <div class="copyright">
+                &copy; 2025 Lakshan K.P.B - Professional Skills Portfolio. All Rights Reserved. | SLIIT City Uni.
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <div class="back-to-top">
+        <i class="fas fa-arrow-up"></i>
+    </div>
+
+    <script>
+        // Header scroll effect
+        window.addEventListener('scroll', function() {
+            const header = document.getElementById('header');
+            if (window.scrollY > 50) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+
+        // Back to top button
+        const backToTopButton = document.querySelector('.back-to-top');
+        
+        window.addEventListener('scroll', function() {
+            if (window.pageYOffset > 300) {
+                backToTopButton.classList.add('show');
+            } else {
+                backToTopButton.classList.remove('show');
+            }
+        });
+        
+        backToTopButton.addEventListener('click', function() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+
+        // Timeline animation
+        const timelineItems = document.querySelectorAll('.timeline-item');
+        
+        const timelineObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, { threshold: 0.1 });
+        
+        timelineItems.forEach(item => {
+            timelineObserver.observe(item);
+        });
+
+        // Lightbox functionality
+        const lightbox = document.getElementById('lightbox');
+        const lightboxImg = document.getElementById('lightbox-img');
+        const galleryItems = document.querySelectorAll('.gallery-item');
+        const closeLightbox = document.querySelector('.close-lightbox');
+        
+        galleryItems.forEach(item => {
+            item.addEventListener('click', function() {
+                const imgSrc = this.querySelector('img').getAttribute('src');
+                lightboxImg.setAttribute('src', imgSrc);
+                lightbox.style.display = 'flex';
+            });
+        });
+        
+        closeLightbox.addEventListener('click', function() {
+            lightbox.style.display = 'none';
+        });
+        
+        lightbox.addEventListener('click', function(e) {
+            if (e.target !== lightboxImg) {
+                lightbox.style.display = 'none';
+            }
+        });
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if(targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if(targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>

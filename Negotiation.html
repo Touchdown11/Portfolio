@@ -1,0 +1,1311 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Negotiation Skills | Lakshan's Professional Skills Portfolio</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        :root {
+            --primary: #1a1a2e;
+            --secondary: #16213e;
+            --accent: #e94560;
+            --gold: #d4af37;
+            --light: #f0f0f0;
+            --text: #333333;
+            --success: #2ecc71;
+            --negotiation-orange: #e67e22;
+            --batna-blue: #3498db;
+            --zopa-green: #2ecc71;
+        }
+
+        body {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            color: var(--light);
+            line-height: 1.6;
+            scroll-behavior: smooth;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header Styles - Enhanced with sticky effect */
+        header {
+            padding: 20px 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background: rgba(22, 33, 62, 0.95);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+            transition: all 0.3s;
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 28px;
+            font-weight: 700;
+            color: var(--gold);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+        }
+
+        .logo i {
+            margin-right: 10px;
+            font-size: 32px;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+
+        nav ul li {
+            margin-left: 30px;
+        }
+
+        nav ul li a {
+            color: var(--light);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+            position: relative;
+        }
+
+        nav ul li a.active {
+            color: var(--gold);
+        }
+
+        nav ul li a.active::after {
+            width: 100%;
+        }
+
+        nav ul li a:hover {
+            color: var(--gold);
+        }
+
+        nav ul li a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -5px;
+            left: 0;
+            background-color: var(--gold);
+            transition: width 0.3s;
+        }
+
+        nav ul li a:hover::after {
+            width: 100%;
+        }
+
+        .menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            color: var(--light);
+            font-size: 24px;
+            cursor: pointer;
+        }
+
+        /* Back to Top Button */
+        .back-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 50px;
+            height: 50px;
+            background: var(--accent);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            font-size: 20px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+            transition: all 0.3s;
+            z-index: 999;
+            opacity: 0;
+            visibility: hidden;
+        }
+
+        .back-to-top.visible {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .back-to-top:hover {
+            background: var(--gold);
+            transform: translateY(-5px);
+        }
+
+        /* Negotiation Hero Section - Enhanced */
+        .negotiation-hero {
+            padding: 150px 0 80px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            background: linear-gradient(rgba(26, 26, 46, 0.85), rgba(22, 33, 62, 0.85)), url('https://images.unsplash.com/photo-1560448204-603b3fc33ddc?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+        }
+
+        .negotiation-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at center, rgba(230, 126, 34, 0.1) 0%, transparent 70%);
+            z-index: -1;
+        }
+
+        .negotiation-hero h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
+            font-weight: 700;
+            background: linear-gradient(45deg, var(--negotiation-orange), #f39c12);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: fadeInUp 1s ease-out;
+        }
+
+        .negotiation-hero p {
+            font-size: 20px;
+            max-width: 800px;
+            margin: 0 auto 30px;
+            color: #cccccc;
+            animation: fadeInUp 1s ease-out 0.2s both;
+        }
+
+        .btn {
+            display: inline-block;
+            background: var(--accent);
+            color: white;
+            padding: 12px 30px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+            border: 2px solid var(--accent);
+            margin-top: 20px;
+            animation: fadeInUp 1s ease-out 0.4s both;
+        }
+
+        .btn:hover {
+            background: transparent;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .btn-outline {
+            background: transparent;
+            border: 2px solid var(--gold);
+            color: var(--gold);
+        }
+
+        .btn-outline:hover {
+            background: var(--gold);
+            color: var(--primary);
+        }
+
+        /* Content Sections */
+        .content-section {
+            padding: 80px 0;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 60px;
+            position: relative;
+        }
+
+        .section-title h2 {
+            font-size: 36px;
+            color: var(--negotiation-orange);
+            margin-bottom: 15px;
+        }
+
+        .section-title p {
+            color: #cccccc;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            width: 80px;
+            height: 3px;
+            background: var(--accent);
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        /* Workshop Objectives - Enhanced with card styling */
+        .objectives-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-bottom: 50px;
+        }
+
+        .objective-card {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 15px;
+            padding: 30px;
+            text-align: center;
+            transition: transform 0.3s;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .objective-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: linear-gradient(90deg, var(--negotiation-orange), var(--accent));
+        }
+
+        .objective-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .objective-card i {
+            font-size: 40px;
+            color: var(--negotiation-orange);
+            margin-bottom: 20px;
+        }
+
+        .objective-card h3 {
+            font-size: 22px;
+            margin-bottom: 15px;
+            color: var(--light);
+        }
+
+        .objective-card p {
+            color: #cccccc;
+        }
+
+        /* Importance Grid - Enhanced */
+        .importance-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-bottom: 50px;
+        }
+
+        .importance-card {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 15px;
+            padding: 30px;
+            transition: transform 0.3s;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .importance-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: linear-gradient(90deg, var(--negotiation-orange), var(--accent));
+        }
+
+        .importance-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .importance-card h3 {
+            font-size: 20px;
+            margin-bottom: 15px;
+            color: var(--light);
+            display: flex;
+            align-items: center;
+        }
+
+        .importance-card h3 i {
+            margin-right: 10px;
+            color: var(--negotiation-orange);
+        }
+
+        .importance-card p {
+            color: #cccccc;
+            margin-bottom: 15px;
+        }
+
+        .example {
+            background: rgba(230, 126, 34, 0.1);
+            padding: 15px;
+            border-radius: 8px;
+            border-left: 3px solid var(--negotiation-orange);
+            font-style: italic;
+        }
+
+        /* Scenario Analysis - Enhanced */
+        .scenario-section {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 15px;
+            padding: 40px;
+            margin: 50px 0;
+            backdrop-filter: blur(10px);
+            border-left: 5px solid var(--negotiation-orange);
+        }
+
+        .scenario-title {
+            text-align: center;
+            margin-bottom: 30px;
+            color: var(--negotiation-orange);
+        }
+
+        .project-managers {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin: 30px 0;
+        }
+
+        .pm-card {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 10px;
+            padding: 20px;
+            text-align: center;
+            transition: transform 0.3s;
+        }
+
+        .pm-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .pm-card h4 {
+            color: var(--light);
+            margin-bottom: 10px;
+        }
+
+        .pm-card.pma {
+            border-top: 4px solid var(--accent);
+        }
+
+        .pm-card.pmb {
+            border-top: 4px solid var(--batna-blue);
+        }
+
+        .pm-card.pmc {
+            border-top: 4px solid var(--zopa-green);
+        }
+
+        /* BATNA & ZOPA Section - Enhanced */
+        .bzna-section {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 30px;
+            margin: 40px 0;
+        }
+
+        .bzna-card {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 15px;
+            padding: 30px;
+            text-align: center;
+            transition: transform 0.3s;
+            backdrop-filter: blur(10px);
+        }
+
+        .bzna-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .bzna-card.batna {
+            border-top: 5px solid var(--batna-blue);
+        }
+
+        .bzna-card.zopa {
+            border-top: 5px solid var(--zopa-green);
+        }
+
+        .bzna-card h3 {
+            margin-bottom: 20px;
+            color: var(--light);
+        }
+
+        .bzna-card .icon {
+            font-size: 50px;
+            margin-bottom: 20px;
+        }
+
+        .bzna-card.batna .icon {
+            color: var(--batna-blue);
+        }
+
+        .bzna-card.zopa .icon {
+            color: var(--zopa-green);
+        }
+
+        /* Tips Grid - Enhanced */
+        .tips-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 25px;
+            margin: 40px 0;
+        }
+
+        .tip-card {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 10px;
+            padding: 25px;
+            transition: transform 0.3s;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .tip-card:hover {
+            transform: translateY(-5px);
+            background: rgba(255, 255, 255, 0.08);
+        }
+
+        .tip-card i {
+            font-size: 30px;
+            color: var(--negotiation-orange);
+            margin-bottom: 15px;
+        }
+
+        .tip-card h4 {
+            margin-bottom: 10px;
+            color: var(--light);
+        }
+
+        .tip-card p {
+            color: #cccccc;
+            font-size: 14px;
+        }
+
+        /* Salary Negotiation Example - Enhanced */
+        .salary-example {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 15px;
+            padding: 40px;
+            margin: 50px 0;
+            border-left: 5px solid var(--negotiation-orange);
+            backdrop-filter: blur(10px);
+        }
+
+        .step-item {
+            margin-bottom: 25px;
+            padding-left: 30px;
+            position: relative;
+        }
+
+        .step-item:before {
+            content: counter(step-counter);
+            counter-increment: step-counter;
+            position: absolute;
+            left: 0;
+            top: 0;
+            background: var(--negotiation-orange);
+            color: white;
+            width: 25px;
+            height: 25px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+        }
+
+        .step-content {
+            background: rgba(230, 126, 34, 0.1);
+            padding: 15px;
+            border-radius: 8px;
+            margin-top: 10px;
+            font-style: italic;
+        }
+
+        /* Quote Section - Enhanced */
+        .quote-section {
+            text-align: center;
+            padding: 60px 0;
+            background: rgba(0, 0, 0, 0.2);
+            margin: 50px 0;
+            border-radius: 15px;
+            backdrop-filter: blur(10px);
+        }
+
+        .quote {
+            font-size: 24px;
+            font-style: italic;
+            color: var(--light);
+            max-width: 800px;
+            margin: 0 auto 20px;
+        }
+
+        .author {
+            color: var(--negotiation-orange);
+            font-weight: bold;
+        }
+
+        /* Expandable Sections */
+        .expandable-section {
+            margin-bottom: 20px;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        .expandable-header {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 15px 20px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: background 0.3s;
+        }
+
+        .expandable-header:hover {
+            background: rgba(255, 255, 255, 0.15);
+        }
+
+        .expandable-header h3 {
+            margin: 0;
+            color: var(--negotiation-orange);
+        }
+
+        .expandable-content {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 0;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s, padding 0.3s;
+        }
+
+        .expandable-content.active {
+            padding: 20px;
+            max-height: 500px;
+        }
+
+        .expandable-content p {
+            margin-bottom: 15px;
+        }
+
+        .expandable-content ul {
+            padding-left: 20px;
+            margin-bottom: 15px;
+        }
+
+        .expandable-content li {
+            margin-bottom: 8px;
+        }
+
+        /* CTA Section */
+        .cta {
+            padding: 100px 0;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            text-align: center;
+        }
+
+        .cta h2 {
+            font-size: 36px;
+            margin-bottom: 20px;
+        }
+
+        .cta p {
+            font-size: 18px;
+            max-width: 700px;
+            margin: 0 auto 30px;
+        }
+
+        .btn-light {
+            background: transparent;
+            color: white;
+            border: 2px solid white;
+        }
+
+        .btn-light:hover {
+            background: white;
+            color: var(--primary);
+        }
+
+        /* Footer */
+        footer {
+            padding: 50px 0 30px;
+            text-align: center;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            margin-top: 50px;
+        }
+
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 30px;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 20px;
+        }
+
+        .social-links a {
+            color: var(--light);
+            font-size: 20px;
+            transition: color 0.3s;
+        }
+
+        .social-links a:hover {
+            color: var(--gold);
+        }
+
+        .copyright {
+            color: #999;
+            font-size: 14px;
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .header-content {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            nav ul {
+                display: none;
+                flex-direction: column;
+                width: 100%;
+                margin-top: 20px;
+            }
+
+            nav ul.show {
+                display: flex;
+            }
+
+            nav ul li {
+                margin: 10px 0;
+            }
+
+            .menu-toggle {
+                display: block;
+                position: absolute;
+                top: 20px;
+                right: 20px;
+            }
+
+            .negotiation-hero h1 {
+                font-size: 36px;
+            }
+
+            .objectives-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .importance-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .bzna-section {
+                grid-template-columns: 1fr;
+            }
+
+            .project-managers {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-content {
+                flex-direction: column;
+                gap: 20px;
+            }
+
+            .expandable-header {
+                padding: 12px 15px;
+            }
+
+            .expandable-header h3 {
+                font-size: 18px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header - Enhanced with sticky effect and mobile menu -->
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <a href="Portfolio.html" class="logo">
+                    <i class="fas fa-graduation-cap"></i> Lakshan K.P.B
+                </a>
+                <button class="menu-toggle" id="menuToggle">
+                    <i class="fas fa-bars"></i>
+                </button>
+                <nav>
+                    <ul id="navMenu">
+                        <li><a href="Portfolio.html">Home</a></li>
+                        <li><a href="Portfolio.html#skills">Skills</a></li>
+                        <li><a href="Portfolio.html#projects">Projects</a></li>
+                        <li><a href="Portfolio.html#contact">Contact</a></li>
+                        <li><a href="Negotiation.html" class="active">Negotiation Skills</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Back to Top Button -->
+    <a href="#" class="back-to-top" id="backToTop">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+
+    <!-- Negotiation Hero Section - Enhanced -->
+    <section class="negotiation-hero">
+        <div class="container">
+            <h1>Negotiation Skills</h1>
+            <p>Mastering the art of effective negotiation for academic, professional, and personal success</p>
+            <a href="#components" class="btn">Explore Key Concepts</a>
+        </div>
+    </section>
+
+    <!-- Workshop Objectives - Enhanced -->
+    <section class="content-section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Workshop Objectives</h2>
+            </div>
+            
+            <div class="objectives-grid">
+                <div class="objective-card">
+                    <i class="fas fa-comments"></i>
+                    <h3>Discuss Fundamentals</h3>
+                    <p>Understand the core concepts and significance of negotiation in various contexts</p>
+                </div>
+                
+                <div class="objective-card">
+                    <i class="fas fa-chess"></i>
+                    <h3>Learn Strategies</h3>
+                    <p>Master effective negotiation techniques and approaches for different scenarios</p>
+                </div>
+                
+                <div class="objective-card">
+                    <i class="fas fa-user-shield"></i>
+                    <h3>Develop Confidence</h3>
+                    <p>Build self-assurance in handling diverse negotiation situations effectively</p>
+                </div>
+                
+                <div class="objective-card">
+                    <i class="fas fa-puzzle-piece"></i>
+                    <h3>Enhance Skills</h3>
+                    <p>Improve communication, collaboration, and problem-solving abilities</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Importance of Negotiation - Enhanced -->
+    <section class="content-section" style="background: rgba(0,0,0,0.2);" id="components">
+        <div class="container">
+            <div class="section-title">
+                <h2>Why Negotiation Skills Matter</h2>
+                <p>The critical importance of negotiation in professional and personal contexts</p>
+            </div>
+            
+            <div class="importance-grid">
+                <div class="importance-card">
+                    <h3><i class="fas fa-handshake"></i> Win-Win Outcomes</h3>
+                    <p>Creating mutually beneficial agreements that satisfy all parties involved.</p>
+                    <div class="example">
+                        <strong>Example:</strong> In a business deal, negotiating terms that increase profits for both parties ensures long-term partnership success.
+                    </div>
+                </div>
+                
+                <div class="importance-card">
+                    <h3><i class="fas fa-heart"></i> Relationship Preservation</h3>
+                    <p>Maintaining positive relationships while addressing conflicts or differences.</p>
+                    <div class="example">
+                        <strong>Example:</strong> In family disputes, effective negotiation prevents long-lasting rifts and maintains harmony.
+                    </div>
+                </div>
+                
+                <div class="importance-card">
+                    <h3><i class="fas fa-balance-scale"></i> Conflict Resolution</h3>
+                    <p>Resolving disagreements constructively to foster positive environments.</p>
+                    <div class="example">
+                        <strong>Example:</strong> Workplace conflicts between employees can be resolved through negotiation, increasing productivity.
+                    </div>
+                </div>
+                
+                <div class="importance-card">
+                    <h3><i class="fas fa-chart-line"></i> Better Agreements</h3>
+                    <p>Achieving optimal outcomes through strategic discussion and compromise.</p>
+                    <div class="example">
+                        <strong>Example:</strong> Negotiating car purchases can result in significant savings and additional benefits like extended warranties.
+                    </div>
+                </div>
+                
+                <div class="importance-card">
+                    <h3><i class="fas fa-shield-alt"></i> Trust Building</h3>
+                    <p>Establishing credibility and reliability through honest negotiation practices.</p>
+                    <div class="example">
+                        <strong>Example:</strong> Vendors delivering quality products as promised build strong client relationships based on trust.
+                    </div>
+                </div>
+                
+                <div class="importance-card">
+                    <h3><i class="fas fa-trophy"></i> Competitive Advantage</h3>
+                    <p>Gaining strategic edges through superior negotiation outcomes.</p>
+                    <div class="example">
+                        <strong>Example:</strong> Companies negotiating better supplier deals can lower costs and offer competitive pricing.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Scenario Analysis - Enhanced -->
+    <section class="content-section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Scenario Analysis</h2>
+                <p>Practical application of negotiation principles in a resource allocation scenario</p>
+            </div>
+            
+            <div class="scenario-section">
+                <h3 class="scenario-title">Construction Company Resource Negotiation</h3>
+                <p>A construction company has multiple projects with limited resources (labor, equipment, materials). Three project managers need to negotiate resource allocation to meet their project deadlines.</p>
+                
+                <div class="project-managers">
+                    <div class="pm-card pma">
+                        <h4>Project Manager A</h4>
+                        <p><strong>Priority:</strong> High-priority project with tight deadline</p>
+                        <p><strong>Strategy:</strong> Emphasize urgency and offer to share excess resources later</p>
+                    </div>
+                    
+                    <div class="pm-card pmb">
+                        <h4>Project Manager B</h4>
+                        <p><strong>Priority:</strong> Project behind schedule needing catch-up</p>
+                        <p><strong>Strategy:</strong> Propose phased approach with initial resource allocation</p>
+                    </div>
+                    
+                    <div class="pm-card pmc">
+                        <h4>Project Manager C</h4>
+                        <p><strong>Priority:</strong> Flexible deadline but high-quality focus</p>
+                        <p><strong>Strategy:</strong> Highlight quality importance and offer optimization</p>
+                    </div>
+                </div>
+                
+                <div class="importance-card">
+                    <h3><i class="fas fa-lightbulb"></i> Key Negotiation Principles Applied</h3>
+                    <ul>
+                        <li><strong>Thorough Preparation:</strong> Researching other parties' backgrounds and interests</li>
+                        <li><strong>Clear Objectives:</strong> Defining must-haves vs. nice-to-haves</li>
+                        <li><strong>Cultural Sensitivity:</strong> Understanding diverse backgrounds and communication styles</li>
+                        <li><strong>Creative Solutions:</strong> Proposing phased approaches and resource sharing</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- BATNA & ZOPA Section - Enhanced -->
+    <section class="content-section" style="background: rgba(0,0,0,0.2);">
+        <div class="container">
+            <div class="section-title">
+                <h2>Key Negotiation Concepts</h2>
+                <p>Understanding BATNA and ZOPA for effective negotiation strategy</p>
+            </div>
+            
+            <div class="bzna-section">
+                <div class="bzna-card batna">
+                    <div class="icon">
+                        <i class="fas fa-chess-board"></i>
+                    </div>
+                    <h3>BATNA</h3>
+                    <p><strong>Best Alternative to a Negotiated Agreement</strong></p>
+                    <p>Your fall-back option if negotiations fail. A strong BATNA provides leverage and confidence.</p>
+                    <div style="margin-top: 20px; text-align: left;">
+                        <h4>Example: Salary Negotiation</h4>
+                        <p>If your current job pays LKR 60,000, your BATNA is finding another job with similar or better pay. This empowers you to reject unfavorable offers.</p>
+                    </div>
+                </div>
+                
+                <div class="bzna-card zopa">
+                    <div class="icon">
+                        <i class="fas fa-venus-double"></i>
+                    </div>
+                    <h3>ZOPA</h3>
+                    <p><strong>Zone of Possible Agreement</strong></p>
+                    <p>The range where both parties' acceptable terms overlap. Finding ZOPA is crucial for successful agreements.</p>
+                    <div style="margin-top: 20px; text-align: left;">
+                        <h4>Example: Salary Range</h4>
+                        <p>If you want LKR 53,000-58,000 and employer offers LKR 50,000-55,000, the ZOPA is LKR 53,000-55,000 where agreement is possible.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Effective Negotiation Tips - Enhanced with Expandable Sections -->
+    <section class="content-section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Effective Negotiation Techniques</h2>
+                <p>Practical strategies for successful negotiation outcomes</p>
+            </div>
+            
+            <div class="tips-grid">
+                <div class="tip-card">
+                    <i class="fas fa-users"></i>
+                    <h4>Build Rapport</h4>
+                    <p>Start with common ground, be genuine, and mirror communication styles to establish connection and trust.</p>
+                </div>
+                
+                <div class="tip-card">
+                    <i class="fas fa-ear-listen"></i>
+                    <h4>Active Listening</h4>
+                    <p>Focus completely on the speaker, ask open-ended questions, and summarize to ensure understanding.</p>
+                </div>
+                
+                <div class="tip-card">
+                    <i class="fas fa-wind"></i>
+                    <h4>Stay Calm & Patient</h4>
+                    <p>Use relaxation techniques, take time to think, and stay focused on objectives despite pressure.</p>
+                </div>
+                
+                <div class="tip-card">
+                    <i class="fas fa-lightbulb"></i>
+                    <h4>Creative Solutions</h4>
+                    <p>Brainstorm freely, consider underlying interests, and be flexible in modifying proposals.</p>
+                </div>
+                
+                <div class="tip-card">
+                    <i class="fas fa-pause-circle"></i>
+                    <h4>Strategic Silence</h4>
+                    <p>Pause after speaking to prompt responses, maintain eye contact, and avoid nervous fidgeting.</p>
+                </div>
+                
+                <div class="tip-card">
+                    <i class="fas fa-step-forward"></i>
+                    <h4>Incremental Negotiation</h4>
+                    <p>Break issues into smaller components, start with easy points, and use package deals.</p>
+                </div>
+                
+                <div class="tip-card">
+                    <i class="fas fa-user-secret"></i>
+                    <h4>Non-Verbal Cues</h4>
+                    <p>Observe body language, tone, and facial expressions to understand hidden emotions.</p>
+                </div>
+                
+                <div class="tip-card">
+                    <i class="fas fa-walking"></i>
+                    <h4>Willingness to Walk Away</h4>
+                    <p>Know your BATNA, assess alternatives, and communicate willingness to walk away diplomatically.</p>
+                </div>
+            </div>
+
+            <!-- Expandable Sections for Additional Tips -->
+            <div class="expandable-section">
+                <div class="expandable-header" onclick="toggleExpandable(this)">
+                    <h3>Advanced Negotiation Strategies</h3>
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="expandable-content">
+                    <p>Beyond basic techniques, these advanced strategies can significantly improve your negotiation outcomes:</p>
+                    <ul>
+                        <li><strong>Anchoring:</strong> Set the initial reference point to influence the negotiation range</li>
+                        <li><strong>Framing:</strong> Present information in a way that highlights certain aspects while downplaying others</li>
+                        <li><strong>Logrolling:</strong> Trade off on different issues where each party values things differently</li>
+                        <li><strong>Contingent Agreements:</strong> Include "if-then" clauses to handle uncertainty</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Salary Negotiation Example - Enhanced -->
+    <section class="content-section" style="background: rgba(0,0,0,0.2);">
+        <div class="container">
+            <div class="section-title">
+                <h2>Practical Application: Salary Negotiation</h2>
+                <p>Step-by-step approach to negotiating a salary increase</p>
+            </div>
+            
+            <div class="salary-example">
+                <div style="counter-reset: step-counter;">
+                    <div class="step-item">
+                        <h4>Understand the Baseline</h4>
+                        <p>Research current salary, industry standards, and your achievements.</p>
+                        <div class="step-content">
+                            "I've researched industry standards and my current responsibilities justify a higher compensation."
+                        </div>
+                    </div>
+                    
+                    <div class="step-item">
+                        <h4>Start Positively</h4>
+                        <p>Express appreciation and value brought to the organization.</p>
+                        <div class="step-content">
+                            "I really appreciate the opportunities I've had here and the value I bring to the team."
+                        </div>
+                    </div>
+                    
+                    <div class="step-item">
+                        <h4>Propose Incremental Changes</h4>
+                        <p>Suggest reasonable increases based on performance and market value.</p>
+                        <div class="step-content">
+                            "Considering my performance, I propose a 10% increase in my salary."
+                        </div>
+                    </div>
+                    
+                    <div class="step-item">
+                        <h4>Justify the Increase</h4>
+                        <p>Provide evidence of contributions and value added.</p>
+                        <div class="step-content">
+                            "I've consistently exceeded targets and brought in new clients, contributing significantly to revenue growth."
+                        </div>
+                    </div>
+                    
+                    <div class="step-item">
+                        <h4>Address Concerns</h4>
+                        <p>Acknowledge constraints and propose alternative timelines.</p>
+                        <div class="step-content">
+                            "I understand budget constraints. How about we revisit this in six months after I've demonstrated more value?"
+                        </div>
+                    </div>
+                    
+                    <div class="step-item">
+                        <h4>Be Flexible</h4>
+                        <p>Offer phased approaches or consider non-monetary benefits.</p>
+                        <div class="step-content">
+                            "If 10% is challenging, how about 5% now with performance-based increments next quarter?"
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Quote Section - Enhanced -->
+    <section class="content-section">
+        <div class="container">
+            <div class="quote-section">
+                <p class="quote">"Successful negotiation is not about getting to 'yes'; it's about mastering 'no' and understanding what the path to an agreement is."</p>
+                <p class="author">— Christopher Voss, Former FBI Negotiation Expert</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Gained Section - Enhanced -->
+    <section class="content-section" style="background: rgba(0,0,0,0.2);">
+        <div class="container">
+            <div class="section-title">
+                <h2>Skills Gained</h2>
+                <p>Strategic and interpersonal competencies developed through negotiation skills training</p>
+            </div>
+            
+            <div class="importance-grid">
+                <div class="importance-card">
+                    <h3><i class="fas fa-chess-board"></i> Strategic Preparation</h3>
+                    <p>The ability to systematically prepare for a negotiation by researching, defining goals, and understanding alternatives (BATNA) and the potential for agreement (ZOPA).</p>
+                    <div class="example">
+                        <strong>Application:</strong> Researching industry standards and defining clear objectives before salary negotiations.
+                    </div>
+                </div>
+                
+                <div class="importance-card">
+                    <h3><i class="fas fa-balance-scale"></i> Leverage Identification</h3>
+                    <p>Understanding the source of power in a negotiation and how to use my BATNA to negotiate from a position of strength.</p>
+                    <div class="example">
+                        <strong>Application:</strong> Recognizing when to leverage alternative job offers during employment negotiations.
+                    </div>
+                </div>
+                
+                <div class="importance-card">
+                    <h3><i class="fas fa-puzzle-piece"></i> Collaborative Problem-Solving</h3>
+                    <p>Shifting from a positional bargaining mindset ("I want this") to an interest-based approach ("I need this because...") to find creative, mutually beneficial solutions.</p>
+                    <div class="example">
+                        <strong>Application:</strong> Finding win-win solutions in resource allocation scenarios by understanding underlying interests.
+                    </div>
+                </div>
+                
+                <div class="importance-card">
+                    <h3><i class="fas fa-comments"></i> Advanced Communication</h3>
+                    <p>Mastering techniques like active listening, strategic silence, and reading non-verbal cues to better understand the other party and manage the flow of the negotiation.</p>
+                    <div class="example">
+                        <strong>Application:</strong> Using strategic pauses and mirroring techniques to build rapport and gather information.
+                    </div>
+                </div>
+                
+                <div class="importance-card">
+                    <h3><i class="fas fa-brain"></i> Emotional Regulation</h3>
+                    <p>Developing the patience and calmness to navigate high-stakes discussions without being driven by emotion, and the confidence to walk away if necessary.</p>
+                    <div class="example">
+                        <strong>Application:</strong> Maintaining composure during difficult negotiations and knowing when to exercise the walk-away option.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta">
+        <div class="container">
+            <h2>Ready to Enhance Your Negotiation Skills?</h2>
+            <p>I've developed comprehensive negotiation skills through professional training and can apply these principles to achieve optimal outcomes in various scenarios.</p>
+            <a href="Portfolio.html#contact" class="btn btn-light">Get In Touch</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="logo">
+                    <i class="fas fa-graduation-cap"></i> Lakshan K.P.B
+                </div>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-github"></i></a>
+                    <a href="#"><i class="fas fa-envelope"></i></a>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2025 Lakshan K.P.B - Professional Skills Portfolio. All Rights Reserved. | SLIIT City Uni.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        const menuToggle = document.getElementById('menuToggle');
+        const navMenu = document.getElementById('navMenu');
+        
+        menuToggle.addEventListener('click', () => {
+            navMenu.classList.toggle('show');
+        });
+
+        // Header scroll effect
+        window.addEventListener('scroll', function() {
+            const header = document.querySelector('header');
+            if (window.scrollY > 100) {
+                header.style.padding = '10px 0';
+                header.style.background = 'rgba(26, 26, 46, 0.98)';
+            } else {
+                header.style.padding = '20px 0';
+                header.style.background = 'rgba(26, 26, 46, 0.95)';
+            }
+            
+            // Back to top button visibility
+            const backToTopBtn = document.querySelector('.back-to-top');
+            if (window.scrollY > 300) {
+                backToTopBtn.classList.add('visible');
+            } else {
+                backToTopBtn.classList.remove('visible');
+            }
+        });
+
+        // Back to top functionality
+        document.querySelector('.back-to-top').addEventListener('click', function() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+
+        // Expandable sections
+        function toggleExpandable(header) {
+            const content = header.nextElementSibling;
+            const icon = header.querySelector('i');
+            
+            content.classList.toggle('active');
+            
+            if (content.classList.contains('active')) {
+                icon.classList.remove('fa-chevron-down');
+                icon.classList.add('fa-chevron-up');
+            } else {
+                icon.classList.remove('fa-chevron-up');
+                icon.classList.add('fa-chevron-down');
+            }
+        }
+
+        // Add animation to elements on scroll
+        const animatedElements = document.querySelectorAll('.objective-card, .importance-card, .pm-card, .bzna-card, .tip-card, .step-item');
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if(entry.isIntersecting) {
+                    entry.target.style.opacity = 1;
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, { threshold: 0.1 });
+        
+        animatedElements.forEach(element => {
+            element.style.opacity = 0;
+            element.style.transform = 'translateY(20px)';
+            element.style.transition = 'opacity 0.5s, transform 0.5s';
+            observer.observe(element);
+        });
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if(targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if(targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                    
+                    // Close mobile menu if open
+                    if (navMenu.classList.contains('show')) {
+                        navMenu.classList.remove('show');
+                    }
+                }
+            });
+        });
+    </script>
+</body>
+</html>

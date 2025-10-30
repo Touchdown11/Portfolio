@@ -1,0 +1,1366 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Emotional Intelligence | Lakshan's Professional Skills Portfolio</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        :root {
+            --primary: #1a1a2e;
+            --secondary: #16213e;
+            --accent: #e94560;
+            --gold: #d4af37;
+            --light: #f0f0f0;
+            --text: #333333;
+            --success: #2ecc71;
+            --ei-teal: #1abc9c;
+            --brain-blue: #3498db;
+            --purple: #9b59b6;
+        }
+
+        body {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            color: var(--light);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header Styles */
+        header {
+            padding: 20px 0;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            background: rgba(22, 33, 62, 0.95);
+            backdrop-filter: blur(10px);
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        header.scrolled {
+            padding: 15px 0;
+            background: rgba(22, 33, 62, 0.98);
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 28px;
+            font-weight: 700;
+            color: var(--gold);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            transition: all 0.3s ease;
+        }
+
+        .logo:hover {
+            transform: translateY(-2px);
+        }
+
+        .logo i {
+            margin-right: 10px;
+            font-size: 32px;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+
+        nav ul li {
+            margin-left: 30px;
+        }
+
+        nav ul li a {
+            color: var(--light);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+            position: relative;
+            padding: 5px 0;
+        }
+
+        nav ul li a:hover {
+            color: var(--gold);
+        }
+
+        nav ul li a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: 0;
+            left: 0;
+            background-color: var(--gold);
+            transition: width 0.3s;
+        }
+
+        nav ul li a:hover::after {
+            width: 100%;
+        }
+
+        /* EI Hero Section */
+        .ei-hero {
+            padding: 150px 0 100px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            background-image: url('https://images.unsplash.com/photo-1553877522-43269d4ea984?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80');
+            background-size: cover;
+            background-position: center;
+            background-blend-mode: overlay;
+            background-color: rgba(26, 26, 46, 0.85);
+        }
+
+        .ei-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at center, rgba(26, 188, 156, 0.1) 0%, transparent 70%);
+            z-index: -1;
+        }
+
+        .ei-hero h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
+            font-weight: 700;
+            background: linear-gradient(45deg, var(--ei-teal), #76ecc8);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .ei-hero p {
+            font-size: 20px;
+            max-width: 800px;
+            margin: 0 auto 30px;
+            color: #cccccc;
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 12px 30px;
+            background: linear-gradient(45deg, var(--ei-teal), var(--purple));
+            color: white;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Content Sections */
+        .content-section {
+            padding: 100px 0;
+            position: relative;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 60px;
+            position: relative;
+        }
+
+        .section-title h2 {
+            font-size: 36px;
+            color: var(--ei-teal);
+            margin-bottom: 15px;
+        }
+
+        .section-title p {
+            color: #cccccc;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            width: 80px;
+            height: 3px;
+            background: var(--accent);
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        /* Components Grid */
+        .components-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 30px;
+            margin-bottom: 50px;
+        }
+
+        .component-card {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 15px;
+            padding: 30px;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .component-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: linear-gradient(90deg, var(--ei-teal), var(--accent));
+        }
+
+        .component-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        .component-card h3 {
+            font-size: 22px;
+            margin-bottom: 15px;
+            color: var(--light);
+            display: flex;
+            align-items: center;
+        }
+
+        .component-card h3 i {
+            margin-right: 10px;
+            color: var(--ei-teal);
+        }
+
+        .component-card ul {
+            padding-left: 20px;
+            margin-top: 15px;
+        }
+
+        .component-card li {
+            margin-bottom: 8px;
+            color: #cccccc;
+            position: relative;
+        }
+
+        .component-card li::before {
+            content: '•';
+            color: var(--ei-teal);
+            font-weight: bold;
+            display: inline-block;
+            width: 1em;
+            margin-left: -1em;
+        }
+
+        /* Emotion Types */
+        .emotion-types {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 25px;
+            margin: 40px 0;
+        }
+
+        .emotion-card {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 10px;
+            padding: 25px;
+            text-align: center;
+            transition: all 0.3s ease;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .emotion-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+            transition: left 0.5s;
+        }
+
+        .emotion-card:hover::before {
+            left: 100%;
+        }
+
+        .emotion-card.positive {
+            border-left: 4px solid var(--success);
+        }
+
+        .emotion-card.negative {
+            border-left: 4px solid var(--accent);
+        }
+
+        .emotion-card:hover {
+            transform: translateY(-5px);
+            background: rgba(255, 255, 255, 0.08);
+        }
+
+        .emotion-card i {
+            font-size: 40px;
+            margin-bottom: 15px;
+        }
+
+        .emotion-card.positive i {
+            color: var(--success);
+        }
+
+        .emotion-card.negative i {
+            color: var(--accent);
+        }
+
+        .emotion-card h4 {
+            margin-bottom: 10px;
+            color: var(--light);
+        }
+
+        .emotion-card p {
+            color: #cccccc;
+            font-size: 14px;
+        }
+
+        /* Brain Diagram */
+        .brain-section {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 15px;
+            padding: 40px;
+            margin: 50px 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .brain-section::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(26, 188, 156, 0.05) 0%, transparent 70%);
+            z-index: 0;
+        }
+
+        .brain-section > * {
+            position: relative;
+            z-index: 1;
+        }
+
+        .brain-diagram {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            flex-wrap: wrap;
+            margin: 30px 0;
+        }
+
+        .brain-part {
+            text-align: center;
+            margin: 20px;
+            max-width: 200px;
+            transition: all 0.3s ease;
+        }
+
+        .brain-part:hover {
+            transform: scale(1.05);
+        }
+
+        .brain-part .icon {
+            width: 80px;
+            height: 80px;
+            background: rgba(52, 152, 219, 0.2);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 15px;
+            font-size: 30px;
+            color: var(--brain-blue);
+            transition: all 0.3s ease;
+        }
+
+        .brain-part:hover .icon {
+            background: rgba(52, 152, 219, 0.3);
+            transform: rotate(10deg);
+        }
+
+        .brain-part h4 {
+            color: var(--light);
+            margin-bottom: 10px;
+        }
+
+        .brain-part p {
+            color: #cccccc;
+            font-size: 14px;
+        }
+
+        /* Comparison Section */
+        .comparison {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            margin: 40px 0;
+        }
+
+        .comparison-card {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 10px;
+            padding: 30px;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .comparison-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .comparison-card.eq {
+            border-top: 5px solid var(--ei-teal);
+        }
+
+        .comparison-card.iq {
+            border-top: 5px solid var(--brain-blue);
+        }
+
+        .comparison-card h3 {
+            margin-bottom: 20px;
+            color: var(--light);
+        }
+
+        .comparison-card ul {
+            text-align: left;
+            list-style-type: none;
+        }
+
+        .comparison-card li {
+            margin-bottom: 10px;
+            padding-left: 25px;
+            position: relative;
+        }
+
+        .comparison-card.eq li:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: var(--ei-teal);
+            font-weight: bold;
+        }
+
+        .comparison-card.iq li:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: var(--brain-blue);
+            font-weight: bold;
+        }
+
+        /* Stats Section */
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin: 40px 0;
+        }
+
+        .stat-card {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 10px;
+            padding: 25px;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .stat-card:hover {
+            transform: translateY(-5px);
+            background: rgba(255, 255, 255, 0.08);
+        }
+
+        .stat-card .number {
+            font-size: 36px;
+            font-weight: bold;
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        .stat-card.eq .number {
+            color: var(--ei-teal);
+        }
+
+        .stat-card.iq .number {
+            color: var(--brain-blue);
+        }
+
+        .stat-card .label {
+            color: #cccccc;
+            font-size: 14px;
+        }
+
+        /* Workplace Value */
+        .workplace-value {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 15px;
+            padding: 40px;
+            margin: 50px 0;
+        }
+
+        .value-list {
+            counter-reset: value-counter;
+        }
+
+        .value-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 20px;
+            padding: 15px;
+            background: rgba(26, 188, 156, 0.1);
+            border-radius: 8px;
+            transition: all 0.3s ease;
+        }
+
+        .value-item:hover {
+            transform: translateX(10px);
+            background: rgba(26, 188, 156, 0.15);
+        }
+
+        .value-item:before {
+            counter-increment: value-counter;
+            content: counter(value-counter);
+            background: var(--ei-teal);
+            color: white;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 15px;
+            flex-shrink: 0;
+        }
+
+        /* Survival Skills */
+        .survival-skills {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 25px;
+            margin: 40px 0;
+        }
+
+        .skill-card {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 10px;
+            padding: 25px;
+            text-align: center;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .skill-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(26, 188, 156, 0.1) 0%, transparent 100%);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .skill-card:hover::before {
+            opacity: 1;
+        }
+
+        .skill-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .skill-card i {
+            font-size: 40px;
+            color: var(--ei-teal);
+            margin-bottom: 15px;
+            transition: all 0.3s ease;
+        }
+
+        .skill-card:hover i {
+            transform: scale(1.2);
+        }
+
+        .skill-card h4 {
+            margin-bottom: 10px;
+            color: var(--light);
+        }
+
+        .skill-card p {
+            color: #cccccc;
+            font-size: 14px;
+        }
+
+        /* Practical Exercises */
+        .exercises {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 25px;
+            margin: 40px 0;
+        }
+
+        .exercise-card {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 10px;
+            padding: 25px;
+            transition: all 0.3s ease;
+            border-left: 4px solid var(--purple);
+        }
+
+        .exercise-card:hover {
+            transform: translateY(-5px);
+            background: rgba(255, 255, 255, 0.08);
+        }
+
+        .exercise-card h4 {
+            color: var(--light);
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+        }
+
+        .exercise-card h4 i {
+            margin-right: 10px;
+            color: var(--purple);
+        }
+
+        .exercise-card p {
+            color: #cccccc;
+            font-size: 14px;
+        }
+
+        /* Footer */
+        footer {
+            padding: 50px 0 30px;
+            text-align: center;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            margin-top: 50px;
+            background: rgba(0, 0, 0, 0.2);
+        }
+
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 30px;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 20px;
+        }
+
+        .social-links a {
+            color: var(--light);
+            font-size: 20px;
+            transition: all 0.3s ease;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(255, 255, 255, 0.1);
+        }
+
+        .social-links a:hover {
+            color: var(--gold);
+            transform: translateY(-3px);
+            background: rgba(255, 255, 255, 0.2);
+        }
+
+        .copyright {
+            color: #999;
+            font-size: 14px;
+        }
+
+        /* Back to Top Button */
+        .back-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 50px;
+            height: 50px;
+            background: var(--ei-teal);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+            cursor: pointer;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+            z-index: 100;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .back-to-top.show {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .back-to-top:hover {
+            background: var(--accent);
+            transform: translateY(-3px);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .header-content {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            nav ul {
+                margin-top: 20px;
+                justify-content: center;
+                flex-wrap: wrap;
+            }
+
+            nav ul li {
+                margin: 10px;
+            }
+
+            .ei-hero {
+                padding: 120px 0 60px;
+            }
+
+            .ei-hero h1 {
+                font-size: 36px;
+            }
+
+            .components-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .emotion-types {
+                grid-template-columns: 1fr;
+            }
+
+            .comparison {
+                grid-template-columns: 1fr;
+            }
+
+            .brain-diagram {
+                flex-direction: column;
+            }
+
+            .footer-content {
+                flex-direction: column;
+                gap: 20px;
+            }
+
+            .quick-nav {
+                display: none;
+            }
+
+            .back-to-top {
+                bottom: 20px;
+                right: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header id="header">
+        <div class="container">
+            <div class="header-content">
+                <a href="Portfolio.html" class="logo">
+                    <i class="fas fa-graduation-cap"></i> Lakshan K.P.B
+                </a>
+                <nav>
+                    <ul>
+                        <li><a href="Portfolio.html">Home</a></li>
+                        <li><a href="Portfolio.html#skills">Skills</a></li>
+                        <li><a href="Portfolio.html#projects">Projects</a></li>
+                        <li><a href="Portfolio.html#contact">Contact</a></li>
+                        <li><a href="EmotionalIntelligence.html" class="active">Emotional Intelligence</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- EI Hero Section -->
+    <section class="ei-hero">
+        <div class="container">
+            <h1>Emotional Intelligence & Survival Skills</h1>
+            <p>Understanding emotions, developing self-awareness, and mastering interpersonal skills for academic and professional success</p>
+            <a href="#emotional-wellness" class="cta-button">Explore Emotional Intelligence</a>
+        </div>
+    </section>
+
+    <!-- Emotional Wellness Section -->
+    <section class="content-section" id="emotional-wellness">
+        <div class="container">
+            <div class="section-title">
+                <h2>Emotional Wellness</h2>
+                <p>Developing a positive attitude, self-esteem, and constructive emotional expression</p>
+            </div>
+            
+            <div class="component-card">
+                <h3><i class="fas fa-heart"></i> Components of Emotional Wellness</h3>
+                <p>Emotional wellness involves having a positive attitude, high self-esteem, a strong sense of self, and the ability to recognize & share a wide range of feelings with others in a constructive way.</p>
+                
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; margin-top: 20px;">
+                    <div style="text-align: center;">
+                        <i class="fas fa-smile" style="font-size: 40px; color: var(--ei-teal); margin-bottom: 10px;"></i>
+                        <p>Positive Attitude</p>
+                    </div>
+                    <div style="text-align: center;">
+                        <i class="fas fa-user-shield" style="font-size: 40px; color: var(--ei-teal); margin-bottom: 10px;"></i>
+                        <p>High Self-Esteem</p>
+                    </div>
+                    <div style="text-align: center;">
+                        <i class="fas fa-brain" style="font-size: 40px; color: var(--ei-teal); margin-bottom: 10px;"></i>
+                        <p>Strong Sense of Self</p>
+                    </div>
+                    <div style="text-align: center;">
+                        <i class="fas fa-comments" style="font-size: 40px; color: var(--ei-teal); margin-bottom: 10px;"></i>
+                        <p>Constructive Expression</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Emotions Components Section -->
+    <section class="content-section" style="background: rgba(0,0,0,0.2);" id="emotion-components">
+        <div class="container">
+            <div class="section-title">
+                <h2>Components of Emotions</h2>
+                <p>Understanding the three distinctive components of emotional experiences</p>
+            </div>
+            
+            <div class="components-grid">
+                <div class="component-card">
+                    <h3><i class="fas fa-feather"></i> Subjective Experience</h3>
+                    <p>The feeling component of emotions that is created in our brains. Emotions make us act in certain ways and are essential for a meaningful life.</p>
+                    <ul>
+                        <li>Aids our survival</li>
+                        <li>Socially important</li>
+                        <li>Creates motivation to act</li>
+                    </ul>
+                </div>
+                
+                <div class="component-card">
+                    <h3><i class="fas fa-heartbeat"></i> Physiological Response</h3>
+                    <p>The bodily changes that occur with emotions, such as increased heart rate, sweating, or changes in facial expressions.</p>
+                    <ul>
+                        <li>Darwin's theory of adaptive expressions</li>
+                        <li>Mirror neurons for empathy</li>
+                        <li>Nonverbal communication</li>
+                    </ul>
+                </div>
+                
+                <div class="component-card">
+                    <h3><i class="fas fa-running"></i> Behavioral Response</h3>
+                    <p>How we express emotions through actions, postures, gestures, vocalizations, and facial expressions.</p>
+                    <ul>
+                        <li>Communicates feelings to others</li>
+                        <li>Influences social interactions</li>
+                        <li>Helps interpret situations</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Types of Emotions Section -->
+    <section class="content-section" id="emotion-types">
+        <div class="container">
+            <div class="section-title">
+                <h2>Types of Emotions</h2>
+                <p>Paul Ekman's 6 basic emotions and their expressions</p>
+            </div>
+            
+            <div class="emotion-types">
+                <div class="emotion-card positive">
+                    <i class="fas fa-laugh"></i>
+                    <h4>Happiness/Joy</h4>
+                    <p>Mouth forming smile, cheeks lifted, twinkle in eye</p>
+                </div>
+                
+                <div class="emotion-card negative">
+                    <i class="fas fa-angry"></i>
+                    <h4>Anger</h4>
+                    <p>Brows drawn together and downward, eyes fixed, mouth squarish</p>
+                </div>
+                
+                <div class="emotion-card negative">
+                    <i class="fas fa-sad-tear"></i>
+                    <h4>Sadness</h4>
+                    <p>Brow's inner corner raised, mouth corners drawn down</p>
+                </div>
+                
+                <div class="emotion-card negative">
+                    <i class="fas fa-surprise"></i>
+                    <h4>Surprise</h4>
+                    <p>Brows raised, eyes widened, mouth rounded in oval shape</p>
+                </div>
+                
+                <div class="emotion-card negative">
+                    <i class="fas fa-flushed"></i>
+                    <h4>Fear</h4>
+                    <p>Brows level, drawn in and up, eyelids lifted, mouth corners retracted</p>
+                </div>
+                
+                <div class="emotion-card negative">
+                    <i class="fas fa-grimace"></i>
+                    <h4>Disgust</h4>
+                    <p>Nose wrinkled, upper lip raised, tongue pushed outward</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Brain Science Section -->
+    <section class="content-section" style="background: rgba(0,0,0,0.2);" id="brain-science">
+        <div class="container">
+            <div class="section-title">
+                <h2>The Science of Emotions</h2>
+                <p>How our brain processes and manages emotional experiences</p>
+            </div>
+            
+            <div class="brain-section">
+                <h3>The Three Brains Theory</h3>
+                <div class="brain-diagram">
+                    <div class="brain-part">
+                        <div class="icon">
+                            <i class="fas fa-brain"></i>
+                        </div>
+                        <h4>Neocortex</h4>
+                        <p>Human Brain - Logic & Abstract Thought</p>
+                    </div>
+                    
+                    <div class="brain-part">
+                        <div class="icon">
+                            <i class="fas fa-heart"></i>
+                        </div>
+                        <h4>Limbic System</h4>
+                        <p>Mammalian - Emotions, Empathy, Parental</p>
+                    </div>
+                    
+                    <div class="brain-part">
+                        <div class="icon">
+                            <i class="fas fa-shield-alt"></i>
+                        </div>
+                        <h4>Reptilian Complex</h4>
+                        <p>Survival & Reproduction</p>
+                    </div>
+                </div>
+                
+                <div class="component-card">
+                    <h3><i class="fas fa-exclamation-triangle"></i> Amygdala Hijack</h3>
+                    <p>When stimuli go directly from thalamus to amygdala before reaching the neocortex, causing emotional reactions before rational thinking.</p>
+                    <p style="margin-top: 15px; font-style: italic;">"We shoot first and ask questions later..." - Survival mechanism</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- EQ vs IQ Section -->
+    <section class="content-section" id="eq-iq">
+        <div class="container">
+            <div class="section-title">
+                <h2>EQ vs IQ</h2>
+                <p>Why emotional intelligence matters more for success</p>
+            </div>
+            
+            <div class="stats-grid">
+                <div class="stat-card eq">
+                    <span class="number">90%</span>
+                    <span class="label">of top performers have high EI</span>
+                </div>
+                
+                <div class="stat-card eq">
+                    <span class="number">58%</span>
+                    <span class="label">of success in all job types comes from EQ</span>
+                </div>
+                
+                <div class="stat-card">
+                    <span class="number">2x</span>
+                    <span class="label">Leaders with EI are twice as likely to be highly resilient</span>
+                </div>
+                
+                <div class="stat-card">
+                    <span class="number">7%</span>
+                    <span class="label">Only 7% of graduates have high EI</span>
+                </div>
+            </div>
+            
+            <div class="comparison">
+                <div class="comparison-card eq">
+                    <h3>Emotional Intelligence (EQ)</h3>
+                    <ul>
+                        <li>Empathy & Social Awareness</li>
+                        <li>Self-Reflection & Self-Control</li>
+                        <li>Relationship Management</li>
+                        <li>Motivation & Resilience</li>
+                        <li>Can be enhanced throughout life</li>
+                        <li>Strong predictor of success</li>
+                    </ul>
+                </div>
+                
+                <div class="comparison-card iq">
+                    <h3>Intelligence Quotient (IQ)</h3>
+                    <ul>
+                        <li>Analysis & Critical Thinking</li>
+                        <li>Technical Expertise</li>
+                        <li>Concept & Design Skills</li>
+                        <li>Patterns & Logic</li>
+                        <li>Largely established at birth</li>
+                        <li>Traditional predictor of success</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Workplace Value Section -->
+    <section class="content-section" style="background: rgba(0,0,0,0.2);" id="workplace">
+        <div class="container">
+            <div class="section-title">
+                <h2>EI in the Workplace</h2>
+                <p>Why employers value emotional intelligence over IQ</p>
+            </div>
+            
+            <div class="workplace-value">
+                <div class="value-list">
+                    <div class="value-item">
+                        <div>
+                            <strong>Remain calm under pressure</strong>
+                            <p>High EI individuals maintain composure in stressful situations</p>
+                        </div>
+                    </div>
+                    
+                    <div class="value-item">
+                        <div>
+                            <strong>Resolve conflict effectively</strong>
+                            <p>Ability to navigate disagreements and find constructive solutions</p>
+                        </div>
+                    </div>
+                    
+                    <div class="value-item">
+                        <div>
+                            <strong>Empathy towards colleagues</strong>
+                            <p>Understanding and responding to coworkers' emotions and needs</p>
+                        </div>
+                    </div>
+                    
+                    <div class="value-item">
+                        <div>
+                            <strong>Lead by example</strong>
+                            <p>Demonstrating emotional intelligence that inspires others</p>
+                        </div>
+                    </div>
+                    
+                    <div class="value-item">
+                        <div>
+                            <strong>Considered decision-making</strong>
+                            <p>Balancing emotional and rational factors in business decisions</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Survival Skills Section -->
+    <section class="content-section" id="survival-skills">
+        <div class="container">
+            <div class="section-title">
+                <h2>Emotional Survival Skills</h2>
+                <p>Practical skills for navigating academic and professional challenges</p>
+            </div>
+            
+            <div class="survival-skills">
+                <div class="skill-card">
+                    <i class="fas fa-eye"></i>
+                    <h4>Self-Awareness</h4>
+                    <p>Recognizing your own emotions and their impact on thoughts and behavior</p>
+                </div>
+                
+                <div class="skill-card">
+                    <i class="fas fa-cogs"></i>
+                    <h4>Self-Management</h4>
+                    <p>Controlling impulsive feelings and behaviors, managing emotions healthily</p>
+                </div>
+                
+                <div class="skill-card">
+                    <i class="fas fa-users"></i>
+                    <h4>Social Awareness</h4>
+                    <p>Understanding others' emotions, needs, and concerns; picking up emotional cues</p>
+                </div>
+                
+                <div class="skill-card">
+                    <i class="fas fa-handshake"></i>
+                    <h4>Relationship Management</h4>
+                    <p>Developing and maintaining good relationships, communicating clearly</p>
+                </div>
+                
+                <div class="skill-card">
+                    <i class="fas fa-brain"></i>
+                    <h4>Emotional Regulation</h4>
+                    <p>Managing amygdala hijack situations and responding rather than reacting</p>
+                </div>
+                
+                <div class="skill-card">
+                    <i class="fas fa-comment-medical"></i>
+                    <h4>Constructive Communication</h4>
+                    <p>Expressing emotions in ways that are appropriate and productive</p>
+                </div>
+            </div>
+            
+            <div class="component-card" style="margin-top: 40px;">
+                <h3><i class="fas fa-lightbulb"></i> Applying EI in Academic Settings</h3>
+                <p>Emotional intelligence is crucial for academic success through:</p>
+                <ul>
+                    <li><strong>Stress management</strong> during exams and deadlines</li>
+                    <li><strong>Effective collaboration</strong> in group projects</li>
+                    <li><strong>Constructive feedback</strong> reception and implementation</li>
+                    <li><strong>Relationship building</strong> with professors and peers</li>
+                    <li><strong>Resilience</strong> in facing academic challenges</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Gained Section -->
+    <section class="content-section" style="background: rgba(0,0,0,0.2);" id="skills-gained">
+        <div class="container">
+            <div class="section-title">
+                <h2>Skills Gained</h2>
+                <p>Foundational interpersonal and intrapersonal skills developed from this learning experience</p>
+            </div>
+            
+            <div class="components-grid">
+                <div class="component-card">
+                    <h3><i class="fas fa-brain"></i> Metacognition (Self-Awareness)</h3>
+                    <p>The ability to observe and identify my own emotional states in real-time, which is the first step to managing them.</p>
+                    <ul>
+                        <li>Real-time emotional observation</li>
+                        <li>Identification of emotional triggers</li>
+                        <li>Foundation for emotional management</li>
+                    </ul>
+                </div>
+                
+                <div class="component-card">
+                    <h3><i class="fas fa-balance-scale"></i> Self-Regulation (Self-Management)</h3>
+                    <p>The conscious ability to pause between a trigger and a response, preventing amygdala hijacks and choosing a more constructive reaction.</p>
+                    <ul>
+                        <li>Trigger-response awareness</li>
+                        <li>Amydala hijack prevention</li>
+                        <li>Constructive response selection</li>
+                    </ul>
+                </div>
+                
+                <div class="component-card">
+                    <h3><i class="fas fa-hands-helping"></i> Empathy (Social Awareness)</h3>
+                    <p>A deeper understanding of the biological and psychological basis of emotions in others, improving my ability to perceive and understand their feelings.</p>
+                    <ul>
+                        <li>Biological basis of emotions</li>
+                        <li>Psychological understanding</li>
+                        <li>Enhanced perception of others' feelings</li>
+                    </ul>
+                </div>
+                
+                <div class="component-card">
+                    <h3><i class="fas fa-sync-alt"></i> Cognitive Reframing</h3>
+                    <p>The skill of shifting my perspective on a situation to manage my emotional response to it.</p>
+                    <ul>
+                        <li>Perspective shifting</li>
+                        <li>Emotional response management</li>
+                        <li>Situational reinterpretation</li>
+                    </ul>
+                </div>
+                
+                <div class="component-card">
+                    <h3><i class="fas fa-book"></i> Neurological Literacy</h3>
+                    <p>Understanding the basic brain science behind behavior, which reduces personalization of conflict and increases compassion for myself and others during stressful interactions.</p>
+                    <ul>
+                        <li>Brain-behavior connection</li>
+                        <li>Reduced conflict personalization</li>
+                        <li>Increased compassion in stress</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Practical Exercises Section -->
+    <section class="content-section" id="exercises">
+        <div class="container">
+            <div class="section-title">
+                <h2>Practical EI Exercises</h2>
+                <p>Simple exercises to develop your emotional intelligence skills</p>
+            </div>
+            
+            <div class="exercises">
+                <div class="exercise-card">
+                    <h4><i class="fas fa-feather"></i> Daily Emotional Check-in</h4>
+                    <p>Take 5 minutes each day to identify and name your emotions. Journaling can help track patterns over time.</p>
+                </div>
+                
+                <div class="exercise-card">
+                    <h4><i class="fas fa-pause-circle"></i> The Pause Practice</h4>
+                    <p>When feeling strong emotions, consciously pause before reacting. Count to 10 and breathe deeply.</p>
+                </div>
+                
+                <div class="exercise-card">
+                    <h4><i class="fas fa-user-friends"></i> Perspective Taking</h4>
+                    <p>In conflicts, intentionally try to see the situation from the other person's viewpoint.</p>
+                </div>
+                
+                <div class="exercise-card">
+                    <h4><i class="fas fa-comments"></i> Active Listening</h4>
+                    <p>Practice listening without interrupting, then paraphrase what you heard to ensure understanding.</p>
+                </div>
+                
+                <div class="exercise-card">
+                    <h4><i class="fas fa-heart"></i> Gratitude Practice</h4>
+                    <p>Each day, identify three things you're grateful for to cultivate positive emotions.</p>
+                </div>
+                
+                <div class="exercise-card">
+                    <h4><i class="fas fa-balance-scale"></i> Emotion Regulation</h4>
+                    <p>When upset, use techniques like deep breathing, visualization, or physical activity to regulate emotions.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="logo">
+                    <i class="fas fa-graduation-cap"></i> Lakshan K.P.B
+                </div>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-github"></i></a>
+                    <a href="#"><i class="fas fa-envelope"></i></a>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2025 Lakshan K.P.B - Professional Skills Portfolio. All Rights Reserved. | SLIIT City Uni.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <div class="back-to-top">
+        <i class="fas fa-arrow-up"></i>
+    </div>
+
+    <script>
+        // Add animation to elements on scroll
+        const animatedElements = document.querySelectorAll('.component-card, .emotion-card, .brain-part, .comparison-card, .stat-card, .value-item, .skill-card, .exercise-card');
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if(entry.isIntersecting) {
+                    entry.target.style.opacity = 1;
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, { threshold: 0.1 });
+        
+        animatedElements.forEach(element => {
+            element.style.opacity = 0;
+            element.style.transform = 'translateY(20px)';
+            element.style.transition = 'opacity 0.5s, transform 0.5s';
+            observer.observe(element);
+        });
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if(targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if(targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // Header scroll effect
+        window.addEventListener('scroll', function() {
+            const header = document.getElementById('header');
+            if (window.scrollY > 50) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+
+        // Back to top button
+        const backToTopButton = document.querySelector('.back-to-top');
+        
+        window.addEventListener('scroll', function() {
+            if (window.pageYOffset > 300) {
+                backToTopButton.classList.add('show');
+            } else {
+                backToTopButton.classList.remove('show');
+            }
+        });
+        
+        backToTopButton.addEventListener('click', function() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+    </script>
+</body>
+</html>
